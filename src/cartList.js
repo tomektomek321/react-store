@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CartItem from './cartItem'
-import { ProductConsumer } from './context'
+//import { ProductConsumer } from './context'
 
 export default class CartList extends Component {
 

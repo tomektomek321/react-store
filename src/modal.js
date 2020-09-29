@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {ProductConsumer} from './context'
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 import ButtonContainer from './buttonComponent'
 
 export default class Modal extends Component {
@@ -10,7 +10,7 @@ export default class Modal extends Component {
             <ProductConsumer>
                 {(value) => {
 
-                    const {modalOpen, closeModal} = value;
+                    const {modalOpen} = value;
                     const {img, title, price} = value.modalProduct;
 
 
@@ -20,7 +20,7 @@ export default class Modal extends Component {
                         return (
                         <ModalContainer>
                             <div>
-                                <img src={img} />
+                                <img src={img} alt="nic" />
                                 <p>{title}</p>
                                 <p>{price}</p>
 

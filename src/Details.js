@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {ProductConsumer} from './context'
 import {Link}  from 'react-router-dom'
 import ButtonContainer from './buttonComponent'
-import styled from 'styled-components';
+//import styled from 'styled-components';
 
 
 export default class Details extends Component {
@@ -11,7 +11,7 @@ export default class Details extends Component {
             <ProductConsumer>
                 {(value) => {
                     //console.log(value.detailProduct);
-                    const {id, company, img, info, price, title, inCart} = value.detailProduct;
+                    const {id, img, price, inCart} = value.detailProduct;
 
                     return (
                         <div>

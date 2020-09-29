@@ -87,12 +87,12 @@ class ProductProvider extends Component {
 
         pr.count = pr.count - 1;
 
-        if(pr.count == 0) {
+        if(pr.count === 0) {
             this.removeItem(id);
             return;
         }
 
-        
+
         pr.total = pr.count * pr.price;
 
         this.setState(() => {

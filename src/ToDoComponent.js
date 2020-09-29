@@ -1,6 +1,6 @@
 
 import React/*, { createContext }*/ from 'react';
-import Item from './Item';
+//import Item from './Item';
 import todosDB from './TodoDB';
 import {Link} from 'react-router-dom'
 import {ProductConsumer} from './context';
