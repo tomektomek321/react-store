@@ -2,7 +2,7 @@
 import React/*, { createContext }*/ from 'react';
 import Item from './Item';
 import todosDB from './TodoDB';
-
+import {Link} from 'react-router-dom'
 import {ProductConsumer} from './context';
 import Product from './Product';
 
@@ -61,12 +61,15 @@ class ToDoComponent extends React.Component {
 
     render() {
 
-        const todoItemsCompItem = this.state.todos.map(it => <Item key={it.id} zadanie={it} handleChange={this.handleChange} />);
+        //const todoItemsCompItem = this.state.todos.map(it => <Item key={it.id} zadanie={it} handleChange={this.handleChange} />);
 
         return (
             <div>
-
+                    <div>
+                        HEADER: <Link to="/cart"><button>koszyk</button></Link>
+                    </div>
                 <ProductConsumer>
+
                     {value => {
                         return value.products.map(product=> {
                             return <Product key={product.id} product={product} />
