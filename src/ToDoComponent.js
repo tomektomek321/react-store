@@ -1,8 +1,7 @@
 
 import React/*, { createContext }*/ from 'react';
-//import Item from './Item';
 import todosDB from './TodoDB';
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 import {ProductConsumer} from './context';
 import Product from './Product';
 
@@ -65,9 +64,6 @@ class ToDoComponent extends React.Component {
 
         return (
             <div>
-                    <div>
-                        HEADER: <Link to="/cart"><button>koszyk</button></Link>
-                    </div>
                 <ProductConsumer>
 
                     {value => {
