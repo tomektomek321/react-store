@@ -3,6 +3,7 @@ import {ProductConsumer} from './context'
 import styled from 'styled-components'
 //import {Link} from 'react-router-dom'
 import ButtonContainer from './buttonComponent'
+import './Modal.scss'
 
 export default class Modal extends Component {
     render() {
@@ -11,7 +12,7 @@ export default class Modal extends Component {
                 {(value) => {
 
                     const {modalOpen} = value;
-                    const {img, title, price} = value.modalProduct;
+                    const {img, title} = value.modalProduct;
 
 
                     if(!modalOpen) {
@@ -19,19 +20,38 @@ export default class Modal extends Component {
                     } else {
                         return (
                         <ModalContainer>
-                            <div>
-                                <img src={img} alt="nic" />
-                                <p>{title}</p>
-                                <p>{price}</p>
+                            <div className="divProduct">
 
-                                <ButtonContainer
-                                    onClick={() => {value.closeModal();}}> 
-                                    Close
-                                </ButtonContainer>
-                                <ButtonContainer
-                                    onClick={ () => {console.log('go to cart?');}}> 
-                                    Na razie nic
-                                </ButtonContainer>
+                            <div className="head">{title}</div>
+
+                            <div className="productImg">
+
+                                <img src={img} alt="product" />
+
+                            </div>
+
+                            <div className="priceAdd">
+
+                                <div className="price">
+                                    <ButtonContainer back
+                                        onClick={() => {value.closeModal();}}> 
+                                        Back to shopping
+                                    </ButtonContainer>
+                                </div>
+
+                                <div className="add">
+
+                                        
+                                    <ButtonContainer
+                                        onClick={ () => {console.log('go to cart?');}}> 
+                                        Go to cart
+                                    </ButtonContainer>
+
+                                </div>
+
+                            </div>
+
+
                             </div>
                             
 
@@ -55,7 +75,7 @@ const ModalContainer = styled.div `
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0, 0.3);
+    background: rgba(0,0,0, 0.75);
     display: flex;
     align-items: center;
     justify-content: center;

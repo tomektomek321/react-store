@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 import {ProductConsumer } from './context'
+import './Product.scss'
 
 
 export default class Product extends Component {
@@ -20,29 +21,48 @@ export default class Product extends Component {
                     <div className="divProduct" onClick={() => {
                         value.handleDetail(id)
                     }}>
-                        <div>{title}</div>
+                        <div className="head">{title}</div>
 
-                        <Link to="/details">
-                            <img src={img} alt="product" />
-                        </Link>
-                        <button
-                            disabled={inCart ? true : false}
-                            onClick={ () => {
-                                value.addToCart(id);
-                                value.openModal(id);
-                             }} >
-                            
-                            {inCart ? (
-                                <p disabled>
-                                    {" "}
-                                    In Cart 
-                                </p>
-                            ) : (
-                                <p> Add </p>
-                            )}
+                        <div className="productImg">
+                            <Link to="/details">
+                                <img src={img} alt="product" />
+                            </Link>
+                        </div>
 
-                        </button>
-                        <div>{price}</div>
+                        <div className="priceAdd">
+                            <div className="price">
+                                price: {price} $
+                                </div>
+
+                            <div className="add">
+
+                                    {inCart ? (
+
+                                        <div disabled>
+                                            {" "}
+                                            In Cart 
+                                        </div>
+
+                                    ) : (
+
+                                        <button
+                                        disabled={inCart ? true : false}
+                                        onClick={ () => {
+                                            value.addToCart(id);
+                                            value.openModal(id);
+                                        }} >
+                                            Add
+                                        </button>
+                                    )}
+
+                                
+
+                            </div>
+
+                        </div>
+                        
+
+                        
                     </div>
 
                 )}

@@ -1,0 +1,47 @@
+
+
+.divProduct {
+
+    background-color: honeydew;
+    border: 1px solid wheat;
+    margin: 10px;
+    padding: 12px;
+    width: 485px;
+    box-sizing: border-box;
+
+
+    .head {
+        border: 1px solid aquamarine;
+        background-color: aquamarine;
+        padding: 9px;
+        text-align: center;
+        font-size: 21px;
+        letter-spacing: 1px;
+    }
+
+    .productImg {
+        margin: 10px 0 15px 0;
+    }
+
+    .priceAdd {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .price {
+            text-align: center;
+            font-size: 19px;
+        }
+
+        .add {
+            button {
+                width: 100%;
+                background-color: yellowgreen;
+                border: 1px solid greenyellow;
+                border-radius: 10px;
+                padding: 7px 20px 7px 20px;
+            }
+        }
+    }
+
+
+}

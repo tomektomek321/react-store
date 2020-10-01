@@ -4,6 +4,7 @@ import todosDB from './TodoDB';
 //import {Link} from 'react-router-dom'
 import {ProductConsumer} from './context';
 import Product from './Product';
+import "./ToDoComponent.scss";
 
 
 
@@ -63,7 +64,7 @@ class ToDoComponent extends React.Component {
         //const todoItemsCompItem = this.state.todos.map(it => <Item key={it.id} zadanie={it} handleChange={this.handleChange} />);
 
         return (
-            <div>
+            <div className="productsContainer">
                 <ProductConsumer>
 
                     {value => {

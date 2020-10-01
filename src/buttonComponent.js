@@ -4,11 +4,12 @@ import styled from 'styled-components';
 
 
 const ButtonContainer = styled.button `
-text-transform: capitalized;
-background-color: red;
-border: 1px solid red;
+background-color:${props => props.back ? "#494282;" : "greenyellow"} ;
+border: 1px solid ${props => props.back ? "#494282;" : "greenyellow"};
+border-radius: 10px;
+padding-top: 2px;
 color: ${props => props.cart ? "black" : "white"};
-padding: 2px 5px 2px 5px;
+padding: 7px 20px 7px 20px;
 `
 
 export default ButtonContainer;
