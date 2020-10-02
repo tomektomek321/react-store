@@ -38,7 +38,7 @@ export default class Product extends Component {
 
                                     {inCart ? (
 
-                                        <div disabled>
+                                        <div className="added" disabled>
                                             {" "}
                                             In Cart 
                                         </div>
