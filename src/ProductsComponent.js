@@ -4,11 +4,12 @@ import todosDB from './TodoDB';
 //import {Link} from 'react-router-dom'
 import {ProductConsumer} from './context';
 import Product from './Product';
+import ToDoListContainer from './ToDoListContainer';
 import "./ToDoComponent.scss";
 
 
 
-class ToDoComponent extends React.Component {
+class ProductsComponent extends React.Component {
 
     constructor() {
 
@@ -65,10 +66,11 @@ class ToDoComponent extends React.Component {
 
         return (
             <div className="productsContainer container">
+                <ToDoListContainer />
                 <ProductConsumer>
 
                     {value => {
-                        return value.products.map(product=> {
+                        return value.filteredProducts.map(product=> {
                             return <Product key={product.id} product={product} />
                         })
                     }}
@@ -81,7 +83,7 @@ class ToDoComponent extends React.Component {
 
 }
 
-export default ToDoComponent;
+export default ProductsComponent;
 
 
 

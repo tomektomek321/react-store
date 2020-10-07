@@ -1,24 +1,23 @@
 
 import React from 'react';
-import ToDoComponent from './ToDoComponent';
+import ProductsComponent from './ProductsComponent';
 import {Route, Switch} from 'react-router-dom';
 import Details from './Details';
-//import Item from './Item';
 import Modal from './modal';
 import Cart from './cart'
 import Navbar from './Navbar'
-
+import PhoneFilter from './PhoneFilter';
 
 function App() {
 
   return (
     <div>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossOrigin="anonymous" />
-
+        
       <React.Fragment>
         <Navbar />
+        <PhoneFilter />
         <Switch>
-          <Route exact path="/" component={ToDoComponent} />
+          <Route exact path="/" component={ProductsComponent} />
           <Route path="/details" component={Details} />
           <Route path="/cart" component={Cart} />
         </Switch>
@@ -26,8 +25,6 @@ function App() {
       <Modal />
       </React.Fragment>
       
-
-
     </div>
   );
 

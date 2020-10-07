@@ -10,6 +10,7 @@ class ProductProvider extends Component {
 
     state = {
         products: [],
+        filteredProducts: [],
         detailProduct: detailProduct,
         cart: [],
         modalOpen: false,
@@ -18,6 +19,12 @@ class ProductProvider extends Component {
         tax: 0,
         cartTotal: 0,
 
+        guaranty: 'all',
+        company: 'all',
+        price: 0,
+        minPrice: 0,
+        maxPrice: 0,
+        
 
 
     }
@@ -32,8 +39,12 @@ class ProductProvider extends Component {
             const singleIt = {...item};
             temp = [...temp, singleIt];
         });
+
+        let min = Math.min(...temp.map(item => item.price));
+        let max = Math.max(...temp.map(item => item.price));
+
         this.setState(() => {
-            return {products: temp};
+            return {products: temp, minPrice: min, maxPrice: max, filteredProducts: temp};
         });
     }
 
@@ -185,6 +196,44 @@ class ProductProvider extends Component {
         })
     }
 
+    handleChange = (event) => {
+        const type = event.target.type;
+        const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+        const name = event.target.name;
+        console.log(type);
+        console.log(name);
+        console.log(value);
+
+        this.setState({
+            [name]: value
+        }, this.filterPhones )
+    }
+
+    filterPhones = () => {
+        let {products, company, guaranty, price} = this.state;
+
+        let tempProd = [...products];
+
+        if(company !== 'all') {
+            tempProd = tempProd.filter(item => item.company === company);
+        }
+
+        if (guaranty) {
+            tempProd = tempProd.filter(room => room.guaranty === true);
+        }
+
+        
+        tempProd = tempProd.filter(room => room.price <= price);
+        
+
+
+
+
+        this.setState({
+            filteredProducts: tempProd
+        })
+    }
+
     render() {
         return (
             <productContext.Provider value={{
@@ -197,6 +246,7 @@ class ProductProvider extends Component {
                 decrement: this.decrement,
                 removeItem: this.removeItem,
                 clearCart: this.clearCart,
+                handleChange: this.handleChange,
             }}>
                 {this.props.children}
             </productContext.Provider>
@@ -207,4 +257,4 @@ class ProductProvider extends Component {
 
 const ProductConsumer = productContext.Consumer;
 
-export {ProductProvider, ProductConsumer};
+export {ProductProvider, ProductConsumer, productContext};

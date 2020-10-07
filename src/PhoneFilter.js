@@ -1,0 +1,81 @@
+import React from 'react'
+import {useContext} from 'react'
+import {productContext} from './context'
+
+const getUnique = (items, value) => {
+    return [...new Set(items.map(item => item[value]))];
+};
+
+export default function PhoneFilter() {
+
+    const myContext = useContext(productContext);
+    
+
+    const {
+        products,
+        handleChange,
+        type,
+        guaranty,
+        price,
+        minPrice,
+        maxPrice
+    
+    } = myContext;
+    
+
+    let setGuaranty = (guaranty === 'all') ? false : guaranty;
+
+    let types = getUnique(products, "company");
+
+    types = ["all", ...types];
+
+    types = types.map((item, index) => (
+        <option key={index} value={item}>
+          {item}
+        </option>
+    ));
+
+
+    return (
+        <div>
+            <div className="form-group">
+                <label htmlFor="type">company</label>
+                <select
+                    name="company"
+                    id="type"
+                    onChange={handleChange}
+                    className="form-control"
+                    value={type} >
+                    {types}
+                </select>
+            </div>
+
+            <div className="form-group">
+                <label htmlFor="price">phone price ${price}</label>
+                <input
+                    type="range"
+                    name="price"
+                    min={minPrice}
+                    max={maxPrice}
+                    id="price"
+                    value={price}
+                    onChange={handleChange}
+                    className="form-control"
+                />
+            </div>
+            
+            <div className="single-extra">
+
+                <input
+                    type="checkbox"
+                    name="guaranty"
+                    id="guaranty"
+                    checked={setGuaranty}
+                    onChange={handleChange}
+                />
+
+                <label htmlFor="guaranty">guaranty</label>
+            </div>
+        </div>
+    )
+}

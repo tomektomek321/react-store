@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Navbar.scss';
 import {Link} from 'react-router-dom'
+import {UserConsumer} from './userContext'
 
 
 export default class Navbar extends Component {
@@ -45,11 +46,30 @@ export default class Navbar extends Component {
 
                 </div>
 
-                <div>About</div>
+                <div>
+                    <UserConsumer>
+                        {({login, logOut}) => (
+                            <div>
+                                {(login === '')
+                                    ?
+                                        "Zaloguj sie"
+                                    :
+                                        "Witaj " + login
+                                }
+                                 
+                                
+                                
+                                <button onClick={logOut}>Log Out</button>
+                            </div>
+                        )}
+
+                    </UserConsumer>
+
+                </div>
 
                 <div></div>
 
-                <div className="icon" onClick={console.log(1)}>&#9776;</div>
+                <div className="icon" >&#9776;</div>
 
             </div>
 

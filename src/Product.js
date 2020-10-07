@@ -9,7 +9,7 @@ export default class Product extends Component {
     
     render() {
 
-        const {id, title, img, price, inCart} = this.props.product;
+        const {id, title, img, price, inCart, guaranty} = this.props.product;
 
         return (
             <ProductWrapper>
@@ -55,7 +55,14 @@ export default class Product extends Component {
                                         </button>
                                     )}
 
-                                
+                                    {guaranty ? (
+                                        <div>
+                                        {" "}
+                                        GUARANTED 
+                                    </div>
+                                    ) : (
+                                        <span></span>
+                                    )}
 
                             </div>
 
