@@ -14,6 +14,7 @@ class ProductProvider extends Component {
         detailProduct: detailProduct,
         cart: [],
         modalOpen: false,
+        cartOpen: false,
         modalProduct: detailProduct,
         cartSubTotal: 0,
         tax: 0,
@@ -68,6 +69,21 @@ class ProductProvider extends Component {
             return {modalOpen: false}
         })
     }
+
+    openCart = () => {
+        this.setState(() => {
+            return {cartOpen: !this.state.cartOpen}
+        })
+    }
+
+    closeCart = () => {
+        this.setState(() => {
+            return {cartOpen: false}
+        })
+    }
+
+
+
 
     increment = (id) => {
         let tempCart = [...this.state.cart];
@@ -170,6 +186,13 @@ class ProductProvider extends Component {
 
     }
 
+    getCart = () => {
+        let price = 0;
+        this.state.cart.map(item => price += item.price);
+
+        return price;
+    }
+
     tester = () => {
         console.log("state product ", this.state.products[0].inCart);
         console.log("data product ", storeProducts[0].inCart);
@@ -247,6 +270,9 @@ class ProductProvider extends Component {
                 removeItem: this.removeItem,
                 clearCart: this.clearCart,
                 handleChange: this.handleChange,
+                getCart: this.getCart,
+                openCart: this.openCart,
+                closeCart: this.closeCart,
             }}>
                 {this.props.children}
             </productContext.Provider>

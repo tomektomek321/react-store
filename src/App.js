@@ -7,12 +7,12 @@ import Modal from './modal';
 import Cart from './cart'
 import Navbar from './Navbar'
 import PhoneFilter from './PhoneFilter';
+//import 'bootstrap/dist/js/bootstrap.min.js';
 
 function App() {
 
   return (
     <div>
-        
       <React.Fragment>
         <Navbar />
         <PhoneFilter />
@@ -22,7 +22,7 @@ function App() {
           <Route path="/cart" component={Cart} />
         </Switch>
 
-      <Modal />
+        <Modal />
       </React.Fragment>
       
     </div>

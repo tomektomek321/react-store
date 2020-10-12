@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Navbar.scss';
 import {Link} from 'react-router-dom'
 import {UserConsumer} from './userContext'
+import { ProductConsumer } from './context';
 
 
 export default class Navbar extends Component {
@@ -68,6 +69,19 @@ export default class Navbar extends Component {
                 </div>
 
                 <div></div>
+                <div className="div-cart">
+                <Link to="/cart">
+                    <ProductConsumer>
+                    
+                        {({getCart, openCart}) => (
+                            <div  onClick={openCart}>
+                                Razem do zaplaty: { getCart() } $
+                            </div>
+                        )}
+                        
+                    </ProductConsumer>
+                    </Link>
+                </div>
 
                 <div className="icon" >&#9776;</div>
 
