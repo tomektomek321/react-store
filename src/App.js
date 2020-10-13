@@ -7,6 +7,7 @@ import Modal from './modal';
 import Cart from './cart'
 import Navbar from './Navbar'
 import PhoneFilter from './PhoneFilter';
+import LeftNavbar from './LeftNavbar';
 //import 'bootstrap/dist/js/bootstrap.min.js';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         </Switch>
 
         <Modal />
+        <LeftNavbar />
       </React.Fragment>
       
     </div>

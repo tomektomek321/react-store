@@ -9,15 +9,21 @@ export default class Navbar extends Component {
 
     state = {
         isOpen: false,
-
+        downMenuOpened: false,
     }
 
     toogleOpen = () => {
         this.setState({isOpen: !this.state.isOpen});
     }
 
+    showDownMenu = () => {
+        this.setState({downMenuOpened: !this.state.downMenuOpened});
+    }
+
     
     render() {
+        let downMenuOpened1 = (!this.state.downMenuOpened) ? "next" : "next hidden";
+
         return (
 
             <div className="topnav">
@@ -68,6 +74,24 @@ export default class Navbar extends Component {
 
                 </div>
 
+                <div>
+                <ProductConsumer>
+                    
+                    {({openLeftNavbar}) => (
+                        <div  onClick={openLeftNavbar}>
+                            Otworz levy navbar
+                        </div>
+                    )}
+                    
+                </ProductConsumer>
+                    
+                    
+                    
+
+
+
+
+                </div>
                 <div></div>
                 <div className="div-cart">
                 <Link to="/cart">
@@ -83,7 +107,15 @@ export default class Navbar extends Component {
                     </Link>
                 </div>
 
-                <div className="icon" >&#9776;</div>
+                <div className="icon" onClick={this.showDownMenu}>
+
+                    &#9776;
+                    
+                </div>
+
+                <div className={downMenuOpened1}>
+                    czesc
+                </div>
 
             </div>
 

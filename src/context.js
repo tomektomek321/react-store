@@ -14,6 +14,7 @@ class ProductProvider extends Component {
         detailProduct: detailProduct,
         cart: [],
         modalOpen: false,
+        leftNavbarOpen: false,
         cartOpen: false,
         modalProduct: detailProduct,
         cartSubTotal: 0,
@@ -50,11 +51,18 @@ class ProductProvider extends Component {
     }
 
     handleDetail = (id) => {
-        console.log("hello");
+        //console.log("hello");
         const product = this.getItem(id);
         this.setState( ()=> {
             return {detailProduct: product}
         })
+    }
+
+    openLeftNavbar = () => {
+        
+        this.setState({
+            leftNavbarOpen: !this.state.leftNavbarOpen
+        });
     }
 
     openModal = id => {
@@ -166,7 +174,7 @@ class ProductProvider extends Component {
     }
 
     addToCart = (id) => {
-        console.log("hello add cart ", id);
+        //console.log("hello add cart ", id);
         let tempProducts = [...this.state.products];
 
         const index = tempProducts.indexOf(this.getItem(id));
@@ -194,8 +202,8 @@ class ProductProvider extends Component {
     }
 
     tester = () => {
-        console.log("state product ", this.state.products[0].inCart);
-        console.log("data product ", storeProducts[0].inCart);
+        //console.log("state product ", this.state.products[0].inCart);
+        //console.log("data product ", storeProducts[0].inCart);
     }
 
     getItem = (id) => {
@@ -210,22 +218,20 @@ class ProductProvider extends Component {
         const tax = parseFloat(tempTax.toFixed(2));
         const total = subTotal + tax;
 
-        this.setState(() => {
-            return {
-                cartSubTotal: subTotal,
-                tax: tax,
-                cartTotal: total
-            }
+        this.setState({
+            cartSubTotal: subTotal,
+            tax: tax,
+            cartTotal: total
         })
     }
 
     handleChange = (event) => {
-        const type = event.target.type;
+        //const type = event.target.type;
         const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
         const name = event.target.name;
-        console.log(type);
-        console.log(name);
-        console.log(value);
+        //console.log(type);
+        //console.log(name);
+        //console.log(value);
 
         this.setState({
             [name]: value
@@ -273,6 +279,7 @@ class ProductProvider extends Component {
                 getCart: this.getCart,
                 openCart: this.openCart,
                 closeCart: this.closeCart,
+                openLeftNavbar: this.openLeftNavbar,
             }}>
                 {this.props.children}
             </productContext.Provider>

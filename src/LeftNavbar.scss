@@ -1,0 +1,29 @@
+
+
+.leftNavbar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background-color: #698010;
+    opacity: 0.8;
+    transition: 0.7s;
+    overflow: hidden;
+
+    &.showed {
+        width: 700px;
+        
+    }
+
+    div {
+        overflow: hidden;
+        padding: 30px 50px;
+        color: white;
+        font-size: 25px;
+        margin-bottom: 5px;
+        background-color: rgb(35, 49, 49);
+    }
+
+
+}

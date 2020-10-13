@@ -2,7 +2,7 @@
 .topnav {
   margin: 5px;
   display: grid;
-  grid-template-columns: 100px 100px 10px 130px 220px auto 250px 40px;
+  grid-template-columns: 100px 100px 10px 130px 220px 200px auto 250px 100px;
   grid-gap: 1px;
 
 
@@ -17,12 +17,24 @@
     
     text-align: center;
 
-
-
   }
 
 
+  .next {
+    grid-area: 2 / 1 / 2 / 9;
+    max-height: 0px;
+    padding: 0px;
+    border-width: 0px;
+    transition: .5s;
 
+    &.hidden {
+      max-height: 50px;
+      padding: 9px 10px;
+      border-width: 1px;
+
+    }
+
+  }
 
   .dropdown {
     position: relative;

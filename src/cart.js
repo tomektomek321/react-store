@@ -10,7 +10,7 @@ export default class Cart extends Component {
         return (
             <section>
                 <div className="container">
-                <div className="card bg-dark  text-white">
+                <div className="card bg-dark  text-white rounded">
                 
                 
                 <div className="card-header">CART</div>
@@ -23,11 +23,7 @@ export default class Cart extends Component {
                     if(cart.length > 0) {
                         return(
                             <React.Fragment>
-                                <div className="form-group">
-                                        <label htmlFor="price">phone price $</label>
-                                        <input type="button" className="btn btn-warning"
-                                        />
-                                    </div>
+                                
                                 <table className="table  table-dark">
                                     
 
