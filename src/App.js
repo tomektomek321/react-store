@@ -9,6 +9,7 @@ import Navbar from './Navbar'
 import PhoneFilter from './PhoneFilter';
 import LeftNavbar from './LeftNavbar';
 //import 'bootstrap/dist/js/bootstrap.min.js';
+import './App.scss';
 
 function App() {
 
