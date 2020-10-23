@@ -65,7 +65,7 @@ class ProductsComponent extends React.Component {
         //const todoItemsCompItem = this.state.todos.map(it => <Item key={it.id} zadanie={it} handleChange={this.handleChange} />);
 
         return (
-            <div className="productsContainer container">
+            <div className="productsContainer">
                 <ToDoListContainer />
                 <ProductConsumer>
 
