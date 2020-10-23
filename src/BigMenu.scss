@@ -1,0 +1,78 @@
+.dropDown {
+    display: none;
+
+    &.active { display: grid;}
+
+
+    position: absolute;
+    top: 100%;
+    left: -60%;
+    width: 900px;
+    //display: ;
+    grid-template-columns: 1fr 1fr;
+    
+
+    .imgCont {
+        background-color: #ce4242;
+        border: 1px solid #ce4242;
+
+        .imgDiv {
+            img { 
+                width: 448px;
+                height: 300px;
+                padding: 10px;
+            }
+        }
+
+        .downDiv {
+            font-size: 15px;
+            font-weight: normal;
+            padding: 10px;
+        }
+
+
+    }
+
+
+    .menuCont {
+        background-color: #ce4242;
+
+
+        .butony {
+            padding: 15px;
+            button {
+                margin-left: 20px;
+            }
+        }
+    }
+
+    .it {
+
+        .name {
+            padding-top: 5px;
+        }
+
+        
+        padding: 12px;
+        border-bottom: 1px solid white;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+
+        &.main {
+            background-color: #ce4242;;
+            border: 1px solid #ce4242;
+        }
+
+        &.down {
+            background-color: #ce4242;
+            border: 1px solid #ce4242;
+            border-top: 1px solid #bb2727;
+        }
+
+        &:hover:not(.main) {
+            z-index: 6;
+            //box-shadow: 0 0 3px 3px rgb(161, 146, 146);
+            background-color: black;
+        }
+    }
+}

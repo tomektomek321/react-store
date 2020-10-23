@@ -1,29 +1,48 @@
 
 
 .leftNavbar {
+
     position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 0px;
+    top: 10px;
+    left: 10px;
+    width: 000px;
     height: 100%;
-    background-color: #698010;
-    opacity: 0.8;
+    opacity: 0.9;
     transition: 0.7s;
     overflow: hidden;
-
-    &.showed {
-        width: 700px;
-        
-    }
+    z-index: 5;
+    
+    &.showed { width: 500px; }
 
     div {
         overflow: hidden;
-        padding: 30px 50px;
         color: white;
         font-size: 25px;
-        margin-bottom: 5px;
+        margin-bottom: 2px;
         background-color: rgb(35, 49, 49);
     }
+
+    .header {
+        height: 85px;
+        padding: 20px 0px 0 0;
+        text-align: center;
+        font-size: 35px;
+        font-weight: bold;
+        border-radius: 20px;
+        letter-spacing: 2px;
+        box-sizing: border-box;
+        word-wrap: break-word;
+    }
+
+    .photo {
+        background-color: rgb(35, 49, 49);
+        border-radius: 20px;
+        padding: 20px;
+        height: 700px;
+        text-align: center;
+    }
+
+    
 
 
 }

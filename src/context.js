@@ -9,6 +9,7 @@ const productContext = React.createContext();
 class ProductProvider extends Component {
 
     state = {
+
         products: [],
         filteredProducts: [],
         detailProduct: detailProduct,
@@ -27,8 +28,6 @@ class ProductProvider extends Component {
         minPrice: 0,
         maxPrice: 0,
         
-
-
     }
 
     componentDidMount() {
@@ -59,10 +58,10 @@ class ProductProvider extends Component {
     }
 
     openLeftNavbar = () => {
-        
+        return;/*
         this.setState({
             leftNavbarOpen: !this.state.leftNavbarOpen
-        });
+        });*/
     }
 
     openModal = id => {

@@ -13,33 +13,24 @@ export default class LeftNavbar extends Component {
 
         return (
             <ProductConsumer>
-                {({leftNavbarOpen}) => {
+                {({leftNavbarOpen, modalProduct}) => {
                     let klasa = (leftNavbarOpen) ? "leftNavbar showed" : "leftNavbar";
-                
+                    const {img, title} = modalProduct;
+                    
                         console.log(5);
                         return (
-                            <>
-                                <div className={klasa}>
+                            <div className={klasa}>
     
-                                <div>MENU !!</div>
-                                <div>MENU !!</div>
-                                <div>MENU !!</div>
-                                <div>MENU !!</div>
-                                <div>MENU !!</div>
-                                <div>MENU !!</div>
-                                <div>MENU !!</div>
-                                <div>MENU !!</div>
-                                <div>MENU !!</div>
-                                <div>MENU !!</div>
-                                <div>MENU !!</div>
-                                <div>MENU !!</div>
-                                <div>MENU !!</div>
-                                <div>MENU !!</div>
-                                <div>MENU !!</div>
+                                <div className="header"> {title}</div>
                                 
+                                <div className="photo">
+
+                                    <img src={img} alt="product" />
+
                                 </div>
+                        
+                            </div>
                                 
-                            </> 
                         );
                     
 

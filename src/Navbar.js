@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import './Navbar.scss';
-import {Link} from 'react-router-dom'
-import {UserConsumer} from './userContext'
+import { Link } from 'react-router-dom'
+//import { UserConsumer } from './userContext'
 import { ProductConsumer } from './context';
+import BigMenu from './BigMenu';
 
 
 export default class Navbar extends Component {
@@ -10,6 +11,8 @@ export default class Navbar extends Component {
     state = {
         isOpen: false,
         downMenuOpened: false,
+        selected: 'home',
+        beforeDropDown: '',
     }
 
     toogleOpen = () => {
@@ -20,9 +23,65 @@ export default class Navbar extends Component {
         this.setState({downMenuOpened: !this.state.downMenuOpened});
     }
 
+    selectSite = (name) => {
+        if(this.state.beforeDropDown !== '') {
+            name = this.state.beforeDropDown;
+            this.setState({beforeDropDown: ''});
+        } else if(name === "dropDown") {
+            this.setState({beforeDropDown: this.state.selected});
+        }  else if(name === "dropDown2") {
+            this.setState({beforeDropDown: this.state.selected});
+        } 
+
+
+        this.setState({selected: name});
+    }
+    /*
+       
+    <Link to="/cart">
+        <ProductConsumer>
+        
+            {({getCart, openCart}) => (
+                <div  onClick={openCart}>
+                    Razem do zaplaty: { getCart() } $
+                </div>
+            )}
+        
+        </ProductConsumer>
+    </Link>
+
+    <UserConsumer>
+        
+        {({login, logOut, logIn}) => (
+            <div>
+                {(login === '')
+                    ?
+                    <span>
+                        <button className="btn btn-info btn-l ml-2" onClick={logIn}>
+                            Zaloguj
+                        </button>   
+                    </span>
+                    :
+                    <span>
+                        Witam {login}
+                        <button className="btn btn-info btn-l ml-2" onClick={logOut}>
+                            Wyloguj
+                        </button>   
+                    </span>
+                }
+                
+            </div>
+        )}
+        
+    </UserConsumer>
+
+
+
+
+    */
     
     render() {
-        let downMenuOpened1 = (!this.state.downMenuOpened) ? "next" : "next hidden";
+
 
         return (
 
@@ -30,92 +89,115 @@ export default class Navbar extends Component {
 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
+                <div className={` 
+                    slide
+                    ${('home' === this.state.selected) ? "slide200" : ""}
+                    ${('inneRzeczy' === this.state.selected) ? "slide400" : ""}
+                    ${('dropDown' === this.state.selected) ? "slide600" : ""}
+                    ${('dropDown2' === this.state.selected) ? "slide800" : ""}
+                `}>
+
+                </div>
+
+                <div className={`logo `}><Link to="/">BestCompany</Link></div>
                 
-                <div className="active"><Link to="/">Home</Link></div>
-                
 
-                <div>News</div>
+                <div className={`item item1 ${('home' === this.state.selected) ? 'active' : ''}`} onClick={() => this.selectSite('home')}><Link to="/">Home</Link></div>
+                <div className={`item item2 ${('inneRzeczy' === this.state.selected) ? 'active' : ''}`} onClick={() => this.selectSite('inneRzeczy')}>Inne Rzeczy</div>
 
-                <div>Contact</div>
+                <div className={`item item3 
+                        ${('dropDown' === this.state.selected) ? 'active' : ''} `} 
+                        onMouseEnter={() => this.selectSite('dropDown')} 
+                        onMouseLeave={() => this.selectSite('dropDown')}>
 
-                <div className="dropdown">
-
-                    <div className="dropbtn">
+                    <div className="dropdown">
+                    
                         Dropdown
-                        <i className="fa fa-caret-down"></i>
-                    </div>
-
-                    <div className="dropdown-content">
-                        <div>Link 1</div>
-                        <div>Link 2</div>
-                        <div>Link 3</div>
-                    </div>
-
-                </div>
-
-                <div>
-                    <UserConsumer>
-                        {({login, logOut}) => (
-                            <div>
-                                {(login === '')
-                                    ?
-                                        "Zaloguj sie"
-                                    :
-                                        "Witaj " + login
-                                }
-                                 
-                                
-                                
-                                <button onClick={logOut}>Log Out</button>
-                            </div>
-                        )}
-
-                    </UserConsumer>
-
-                </div>
-
-                <div>
-                <ProductConsumer>
-                    
-                    {({openLeftNavbar}) => (
-                        <div  onClick={openLeftNavbar}>
-                            Otworz levy navbar
-                        </div>
-                    )}
-                    
-                </ProductConsumer>
-                    
-                    
-                    
-
-
-
-
-                </div>
-                <div></div>
-                <div className="div-cart">
-                <Link to="/cart">
-                    <ProductConsumer>
-                    
-                        {({getCart, openCart}) => (
-                            <div  onClick={openCart}>
-                                Razem do zaplaty: { getCart() } $
-                            </div>
-                        )}
+                        <i className="fa fa-caret-down ml-2"></i>
                         
-                    </ProductConsumer>
-                    </Link>
+                        <div className="dropdown-content">
+                            <div className="cont">
+                                <div className="it">Jakies inne menu</div>
+                                <div className="it">Jakies inne menu</div>
+                                <div className="it">Jakies inne menu</div>
+                                <div className="it">Jakies inne menu</div>
+                                <div className="it">Jakies inne menu</div>
+                            </div>
+                            
+                        </div>
+
+
+                    </div>
                 </div>
 
-                <div className="icon" onClick={this.showDownMenu}>
 
-                    &#9776;
+                <div className={`item item4 
+                        ${('dropDown2' === this.state.selected) ? 'active' : ''} `} 
+                        onMouseEnter={() => this.selectSite('dropDown2')} 
+                        onMouseLeave={() => this.selectSite('dropDown2')}>
+
+                    <ProductConsumer>
+                        {({openLeftNavbar}) => (
+                            <div  onClick={openLeftNavbar}>
+                                Otworz levy navbar
+                            </div>
+                        )}
+                    </ProductConsumer>
+
+                    <BigMenu hovered={this.state.selected} />
+
+                </div>
+
+                <div className="item item5">
                     
                 </div>
 
-                <div className={downMenuOpened1}>
-                    czesc
+                <div className="logging width-2x">
+                    
+                    
+                    <label htmlFor="validationTooltip05">Login</label>
+                    
+                        <input className="form-control" type="text" />
+
+                    <label htmlFor="validationTooltip05">Password</label>
+                    
+                        <input className="form-control" type="text" />
+                    
+                    <button type="button" className="btn btn-outline-primary">Login</button>
+
                 </div>
+
+                <div className="animateMenu">
+
+                    <div className="mainIcon">
+                        
+                    </div>
+
+                    <div className="downMenu">
+                        
+                        <div className="it down">
+                            <img alt="nic"  src="img/user-32.ico" />
+                        </div>
+                        <div className="it down">
+                            <img alt="nic"  src="img/basketball-32.ico" />
+                        </div>
+                        <div className="it down">
+                            <img alt="nic"  src="img/tennis-32.ico" />
+                        </div>
+                        <div className="it down">
+                            <img alt="nic"  src="img/bar-chart-3-32.ico" />
+                        </div> 
+                        <div className="it down">
+                            <img alt="nic"  src="img/logout-32.ico" />
+                        </div>
+                        <div className="it main">
+                            <img alt="nic"  src="img/x-mark-3-32.ico" />
+                        </div>
+                    </div>
+
+
+                </div>
+
 
             </div>
 
