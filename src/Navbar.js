@@ -31,27 +31,27 @@ export default class Navbar extends Component {
             this.setState({beforeDropDown: this.state.selected});
         }  else if(name === "dropDown2") {
             this.setState({beforeDropDown: this.state.selected});
-        } 
+        }
 
 
         this.setState({selected: name});
     }
     /*
-       
+
     <Link to="/cart">
         <ProductConsumer>
-        
+
             {({getCart, openCart}) => (
                 <div  onClick={openCart}>
                     Razem do zaplaty: { getCart() } $
                 </div>
             )}
-        
+
         </ProductConsumer>
     </Link>
 
     <UserConsumer>
-        
+
         {({login, logOut, logIn}) => (
             <div>
                 {(login === '')
@@ -59,27 +59,27 @@ export default class Navbar extends Component {
                     <span>
                         <button className="btn btn-info btn-l ml-2" onClick={logIn}>
                             Zaloguj
-                        </button>   
+                        </button>
                     </span>
                     :
                     <span>
                         Witam {login}
                         <button className="btn btn-info btn-l ml-2" onClick={logOut}>
                             Wyloguj
-                        </button>   
+                        </button>
                     </span>
                 }
-                
+
             </div>
         )}
-        
+
     </UserConsumer>
 
 
 
 
     */
-    
+
     render() {
 
 
@@ -89,7 +89,7 @@ export default class Navbar extends Component {
 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
-                <div className={` 
+                <div className={`
                     slide
                     ${('home' === this.state.selected) ? "slide200" : ""}
                     ${('inneRzeczy' === this.state.selected) ? "slide400" : ""}
@@ -100,21 +100,21 @@ export default class Navbar extends Component {
                 </div>
 
                 <div className={`logo `}><Link to="/">BestCompany</Link></div>
-                
+
 
                 <div className={`item item1 ${('home' === this.state.selected) ? 'active' : ''}`} onClick={() => this.selectSite('home')}><Link to="/">Home</Link></div>
                 <div className={`item item2 ${('inneRzeczy' === this.state.selected) ? 'active' : ''}`} onClick={() => this.selectSite('inneRzeczy')}>Inne Rzeczy</div>
 
-                <div className={`item item3 
-                        ${('dropDown' === this.state.selected) ? 'active' : ''} `} 
-                        onMouseEnter={() => this.selectSite('dropDown')} 
+                <div className={`item item3
+                        ${('dropDown' === this.state.selected) ? 'active' : ''} `}
+                        onMouseEnter={() => this.selectSite('dropDown')}
                         onMouseLeave={() => this.selectSite('dropDown')}>
 
                     <div className="dropdown">
-                    
+
                         Dropdown
                         <i className="fa fa-caret-down ml-2"></i>
-                        
+
                         <div className="dropdown-content">
                             <div className="cont">
                                 <div className="it">Jakies inne menu</div>
@@ -123,7 +123,7 @@ export default class Navbar extends Component {
                                 <div className="it">Jakies inne menu</div>
                                 <div className="it">Jakies inne menu</div>
                             </div>
-                            
+
                         </div>
 
 
@@ -131,9 +131,9 @@ export default class Navbar extends Component {
                 </div>
 
 
-                <div className={`item item4 
-                        ${('dropDown2' === this.state.selected) ? 'active' : ''} `} 
-                        onMouseEnter={() => this.selectSite('dropDown2')} 
+                <div className={`item item4
+                        ${('dropDown2' === this.state.selected) ? 'active' : ''} `}
+                        onMouseEnter={() => this.selectSite('dropDown2')}
                         onMouseLeave={() => this.selectSite('dropDown2')}>
 
                     <ProductConsumer>
@@ -149,32 +149,35 @@ export default class Navbar extends Component {
                 </div>
 
                 <div className="item item5">
-                    
+
                 </div>
 
                 <div className="logging width-2x">
-                    
-                    
-                    <label htmlFor="validationTooltip05">Login</label>
-                    
-                        <input className="form-control" type="text" />
 
-                    <label htmlFor="validationTooltip05">Password</label>
-                    
-                        <input className="form-control" type="text" />
-                    
-                    <button type="button" className="btn btn-outline-primary">Login</button>
+                    <div className="dropLogin">
+                        <div>
+                            <input className="form-control" placeholder="login.." type="text" />
+                        </div>
+                        <div>
+                            <input className="form-control" placeholder="password.." type="text" />
+                        </div>
+                        <div>
+                            <input type="button" className="btn btn-outline-primary logInBtn" value="Log" />
+                        </div>
+                    </div>
+
+                    <input type="button" className="btn btn-outline-primary" value="Login" />
 
                 </div>
 
                 <div className="animateMenu">
 
                     <div className="mainIcon">
-                        
+
                     </div>
 
                     <div className="downMenu">
-                        
+
                         <div className="it down">
                             <img alt="nic"  src="img/user-32.ico" />
                         </div>
@@ -186,7 +189,7 @@ export default class Navbar extends Component {
                         </div>
                         <div className="it down">
                             <img alt="nic"  src="img/bar-chart-3-32.ico" />
-                        </div> 
+                        </div>
                         <div className="it down">
                             <img alt="nic"  src="img/logout-32.ico" />
                         </div>

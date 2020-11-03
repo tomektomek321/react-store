@@ -284,6 +284,8 @@ class ProductProvider extends Component {
             </productContext.Provider>
         )
     }
+	
+	
 }
 
 

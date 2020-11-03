@@ -1,0 +1,47 @@
+
+
+.logging {
+
+    padding: 10px 0px;
+    color: white;
+    border: 0px solid red;
+    margin: 2px 3px;
+    transition: width 1s;
+    position: relative;
+    text-align: right;
+
+    .dropLogin {
+        opacity: 0;
+        padding: 14px 20px 11px 20px;
+        position: absolute;
+        top: 100%;
+        left: -70%;
+        background-color: #233323;
+        border: 1px solid #807979;
+
+        > div {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            display: inline-block;
+            background-color: #2a2975;
+            border-color: #7b80bd;
+            color: white;
+            width: 200px;
+        }
+
+        .logInBtn {
+            float: left;
+            width: 100%;
+        }
+    }
+
+    &:hover {
+        .dropLogin {
+            opacity: 1;
+        }
+    }
+
+
+}
