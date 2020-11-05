@@ -27,7 +27,7 @@ class ProductProvider extends Component {
         price: 0,
         minPrice: 0,
         maxPrice: 0,
-        
+
     }
 
     componentDidMount() {
@@ -45,7 +45,7 @@ class ProductProvider extends Component {
         let max = Math.max(...temp.map(item => item.price));
 
         this.setState(() => {
-            return {products: temp, minPrice: min, maxPrice: max, filteredProducts: temp};
+            return {products: temp, minPrice: min, maxPrice: max, price: max, filteredProducts: temp};
         });
     }
 
@@ -108,7 +108,7 @@ class ProductProvider extends Component {
         }, () => {
             this.addTotals();
         })
-        
+
     }
 
     decrement = (id) => {
@@ -134,8 +134,8 @@ class ProductProvider extends Component {
         }, () => {
             this.addTotals();
         })
-        
-        
+
+
     }
 
     removeItem = (id) => {
@@ -159,7 +159,7 @@ class ProductProvider extends Component {
         }, () => {
             this.addTotals();
         })
-        
+
     }
 
     clearCart = () => {
@@ -169,7 +169,7 @@ class ProductProvider extends Component {
             this.setProducts();
             this.addTotals();
         })
-        
+
     }
 
     addToCart = (id) => {
@@ -225,34 +225,48 @@ class ProductProvider extends Component {
     }
 
     handleChange = (event) => {
-        //const type = event.target.type;
-        const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
-        const name = event.target.name;
-        //console.log(type);
-        //console.log(name);
+        //console.log( event.target.id);
+        let resp;
+
+        resp = event.target.type === "radio" ? event.target.checked : event.target.value;
+
+        if(event.target.type === "radio" && event.target.id === "customRadio1") {
+            resp = true;
+        } else if(event.target.type === "radio" && event.target.id === "customRadio2") {
+            resp = false;
+        } else if(event.target.type === "radio" && event.target.id === "customRadio3") {
+            resp = "all";
+        }
         //console.log(value);
+        /*const name = event.target.name;
+
+        console.log(name);
+        console.log(value);*/
 
         this.setState({
-            [name]: value
+            [event.target.name]: resp
         }, this.filterPhones )
     }
 
     filterPhones = () => {
         let {products, company, guaranty, price} = this.state;
-
+        //console.log(guaranty);
         let tempProd = [...products];
 
         if(company !== 'all') {
             tempProd = tempProd.filter(item => item.company === company);
         }
 
-        if (guaranty) {
+        if (guaranty === true) {
             tempProd = tempProd.filter(room => room.guaranty === true);
         }
 
-        
+        if (guaranty === false) {
+            tempProd = tempProd.filter(room => room.guaranty === false);
+        }
+
         tempProd = tempProd.filter(room => room.price <= price);
-        
+
 
 
 
@@ -284,8 +298,8 @@ class ProductProvider extends Component {
             </productContext.Provider>
         )
     }
-	
-	
+
+
 }
 
 

@@ -11,7 +11,7 @@ export default class Product extends Component {
         photoShowed: true,
         mainDivHover: false,
     }
-    
+
     hidePhoto = () => {     this.setState({ photoShowed: !this.state.photoShowed }); }
     mainDivHov = () => {    this.setState({ mainDivHover: !this.state.mainDivHover }); }
 
@@ -29,10 +29,10 @@ export default class Product extends Component {
 
                 {value => (
 
-                    <div className={hovDiv}  onMouseEnter={this.mainDivHov} onMouseLeave={this.mainDivHov} 
+                    <div className={hovDiv}  onMouseEnter={this.mainDivHov} onMouseLeave={this.mainDivHov}
                         onClick={() => { value.handleDetail(id) }}>
 
-                        <div className="head" onClick={this.hidePhoto}>{title}. UKRYJ</div>
+                        <div className="head" onClick={this.hidePhoto}>{title}</div>
 
                         <div className={imgClass}>
                             <Link to="/details">
@@ -50,7 +50,7 @@ export default class Product extends Component {
                                     {inCart ? (
 
                                         <div className="added" disabled>
-                                            In Cart 
+                                            In Cart
                                         </div>
 
                                     ) : (
@@ -67,7 +67,7 @@ export default class Product extends Component {
 
                                     {guaranty ? (
                                         <div>
-                                            GUARANTED 
+                                            GUARANTED
                                         </div>
                                     ) : (
                                         <span></span>
@@ -76,9 +76,9 @@ export default class Product extends Component {
                             </div>
 
                         </div>
-                        
 
-                        
+
+
                     </div>
 
                 )}

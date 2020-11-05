@@ -20,7 +20,7 @@ export default class Modal extends Component {
                     } else {
                         return (
                         <ModalContainer>
-                            <div className="divProduct">
+                            <div className="divProductModal">
 
                             <div className="head">{title}</div>
 
@@ -34,16 +34,16 @@ export default class Modal extends Component {
 
                                 <div className="price">
                                     <ButtonContainer back
-                                        onClick={() => {value.closeModal();}}> 
+                                        onClick={() => {value.closeModal();}}>
                                         Back to shopping
                                     </ButtonContainer>
                                 </div>
 
                                 <div className="add">
 
-                                        
+
                                     <ButtonContainer
-                                        onClick={ () => {console.log('go to cart?');}}> 
+                                        onClick={ () => {console.log('go to cart?');}}>
                                         Go to cart
                                     </ButtonContainer>
 
@@ -53,7 +53,7 @@ export default class Modal extends Component {
 
 
                             </div>
-                            
+
 
                         </ModalContainer> )
                     }

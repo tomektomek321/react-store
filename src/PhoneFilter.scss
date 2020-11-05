@@ -1,0 +1,29 @@
+
+.filterDiv {
+    margin: 10px;
+
+    display: flex;
+
+    >div {
+        margin: 10px;
+    }
+
+    .companyFilter {
+        width: 35%;
+        label {color: white;}
+
+        .form-control {
+            background-color: #474850;;
+            color: white;
+            border: 1px solid #72a1d0;
+        }
+
+    }
+    .priceFilter { width: 35%; label {color: white;}}
+
+
+    .radioDiv {
+        label { color: white; }
+    }
+
+}

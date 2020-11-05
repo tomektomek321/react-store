@@ -1,6 +1,8 @@
 import React from 'react'
 import {useContext} from 'react'
 import {productContext,ProductConsumer} from './context'
+import './PhoneFilter.scss'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const getUnique = (items, value) => {
     return [...new Set(items.map(item => item[value]))];
@@ -9,7 +11,7 @@ const getUnique = (items, value) => {
 export default function PhoneFilter() {
 
     const myContext = useContext(productContext);
-    
+
 
     const {
         products,
@@ -19,11 +21,11 @@ export default function PhoneFilter() {
         price,
         minPrice,
         maxPrice,
-    
-    } = myContext;
-    
 
-    let setGuaranty = (guaranty === 'all') ? false : guaranty;
+    } = myContext;
+
+    //console.log(guaranty);
+    //et setGuaranty = (guaranty === 1) ? 1 : 2;
 
     let types = getUnique(products, "company");
 
@@ -44,10 +46,10 @@ export default function PhoneFilter() {
                 if(!cartOpen) {
                     return(
                         <React.Fragment>
-                            <div>
-                                <div className="form-group">
-                                    <label htmlFor="type">company</label>
-                                    
+                            <div className="filterDiv">
+                                <div className="form-group companyFilter">
+                                    <label htmlFor="type">COMPANY</label>
+
                                     <select
                                         name="company"
                                         id="type"
@@ -58,9 +60,9 @@ export default function PhoneFilter() {
                                     </select>
 
                                 </div>
-                    
-                                <div className="form-group">
-                                    <label htmlFor="price">phone price ${price}</label>
+
+                                <div className="form-group priceFilter">
+                                    <label htmlFor="price">PHONE PRICE RANGE: 0 - {price} $</label>
 
                                     <input
                                         type="range"
@@ -74,23 +76,27 @@ export default function PhoneFilter() {
                                     />
 
                                 </div>
-                                
-                                <div className="single-extra">
 
-                                    <input
-                                        type="checkbox"
-                                        name="guaranty"
-                                        id="guaranty"
-                                        checked={setGuaranty}
-                                        onChange={handleChange}
-                                    />
-                    
-                                    <label htmlFor="guaranty">guaranty</label>
+                                <div className="single-extra radioDiv">
+
+                                    <div className="custom-control custom-radio">
+                                        <input type="radio" id="customRadio1" checked={guaranty === true} onChange={handleChange} value="radio1" name="guaranty" className="custom-control-input" />
+                                        <label className="custom-control-label" htmlFor="customRadio1">GWARANCJA</label>
+                                    </div>
+                                    <div className="custom-control custom-radio">
+                                        <input type="radio" id="customRadio2" checked={guaranty === false} onChange={handleChange} value="radio2" name="guaranty" className="custom-control-input" />
+                                        <label className="custom-control-label" htmlFor="customRadio2">BRAK GWARANCJI</label>
+                                    </div>
+                                    <div className="custom-control custom-radio">
+                                        <input type="radio" id="customRadio3" checked={guaranty === "all"} onChange={handleChange} value="radio3" name="guaranty" className="custom-control-input" />
+                                        <label className="custom-control-label" htmlFor="customRadio3">EGAL</label>
+                                    </div>
+
                                 </div>
                             </div>
                         </React.Fragment>
 
-                    ) 
+                    )
                 } else {
                     return <p>NIC</p>
                 }

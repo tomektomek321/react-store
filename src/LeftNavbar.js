@@ -6,7 +6,7 @@ export default class LeftNavbar extends Component {
     render() {
 
 
-        
+
 
 
 
@@ -16,23 +16,23 @@ export default class LeftNavbar extends Component {
                 {({leftNavbarOpen, modalProduct}) => {
                     let klasa = (leftNavbarOpen) ? "leftNavbar showed" : "leftNavbar";
                     const {img, title} = modalProduct;
-                    
-                        console.log(5);
+
+                        //console.log(5);
                         return (
                             <div className={klasa}>
-    
+
                                 <div className="header"> {title}</div>
-                                
+
                                 <div className="photo">
 
                                     <img src={img} alt="product" />
 
                                 </div>
-                        
+
                             </div>
-                                
+
                         );
-                    
+
 
                 }}
 
