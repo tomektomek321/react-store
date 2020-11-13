@@ -1,0 +1,208 @@
+
+
+.cartDiv {
+    padding: 13px 0 0 0;
+    display: flex;
+    flex-direction: row;
+
+    position: relative;
+
+    &.hov { .cartDiv_downListDiv {display: block;} }
+
+
+    &:hover {
+        background-color: #bfbfbf;
+        //border-radius: 10px;
+    }
+
+    .cartDiv_image {
+        text-align: center;
+        width: 35%;
+        cursor: pointer;
+    }
+
+    .cartDiv_price {
+        padding-top: 2px;
+        font-size: 23px;
+        text-align: left;
+        width: 65%;
+        cursor: pointer;
+    }
+
+    .cartDiv_downListDiv {
+        position: absolute;
+        width: 900px;
+        background-color:#9a9999;
+        top: 58px;
+        left: -660px;
+        overflow: hidden;
+        display: none;
+
+        .cartDiv_ {
+            display: flex;
+            align-items: flex-end;
+
+            background-color: #bfbfbf;
+
+            .cart_items {
+                width: 60%;
+                margin: 5px;
+
+            }
+
+            .cart_totalDiv {
+                width: 40%;
+            }
+        }
+
+        .cart_item {
+            display: flex;
+            flex-direction: row;
+            color: black;
+            margin: 5px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid white;
+            align-items: flex-end;
+
+            > div {
+                height: 85px;
+                padding-top: 13px;
+                margin: 2px;
+                //background-color: #868383;
+
+
+            }
+
+            .cart_item--image {
+                width: 19%;
+                padding-top: 3px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .cart_item--nameAmount {
+                width: 45%;
+
+                .cart_item--name { width: 100%; height: 50%;}
+
+                .cart_item--count {
+                    height: 50%;
+                    display: flex;
+                    flex-direction: row;
+                    padding-left: 25%;
+                    padding-right: 25%;
+
+                    > div {
+                        background-color: #ececec;
+                        margin: 3px;
+                        padding-top: 5px;
+                    }
+
+                    .decrement {
+                        width: 33%;
+                        &:hover {
+                            background-color: rgb(70, 70, 70);
+                            color: white !important;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .count { width: 34%; }
+
+                    .increment {
+                        width: 33%;
+                        &:hover {
+                            background-color: rgb(70, 70, 70);
+                            color: white !important;
+                            cursor: pointer;
+                        }
+                    }
+
+                }
+
+
+
+
+
+            }
+
+            .cart_item--price  {
+                width: 17%;
+                padding-top: 31px;
+                font-size: 24px;
+            }
+
+            .cart_item--delete {
+                width: 15%;
+                padding-top: 29px;
+                cursor: pointer;
+                transition: 0.5s;
+                &:hover {
+                    background-color: #888888;
+                    border-radius: 50%;
+                }
+            }
+
+        }
+
+
+
+        .cart_total {
+            background-color: #888888;
+            margin: 5px;
+            padding-bottom: 5px;
+
+
+            > div { height: 50px; padding-top: 13px;}
+
+
+            .cart_total--subtotal, .cart_total--tax,
+            .cart_total--discount, .cart_total--total {
+                display: flex;
+                > div {width: 50%; }
+            }
+
+
+            .cart_total--btnBuy {
+                margin: 0 14% 20px 14%;
+                background-color: blue;
+                box-shadow: 0 3px 5px 3px rgb(90, 88, 88);
+            }
+
+
+        }
+
+
+
+    }
+
+
+
+
+}
+
+@media screen and (max-width: 500px) {
+
+	.cartDiv_downListDiv {
+        position: absolute;
+        width: 432px;
+        background-color: #9a9999;
+        top: 58px;
+        left: -317%;
+        overflow: hidden;
+        display: block;
+
+    }
+
+    .cartDiv_ {
+        display: block;
+
+        .cart_items { width: 100%;}
+        .cart_totalDiv { width: 100%;}
+    }
+
+}
+

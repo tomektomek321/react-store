@@ -18,10 +18,10 @@ class ProductProvider extends Component {
         leftNavbarOpen: false,
         cartOpen: false,
         modalProduct: detailProduct,
-        cartSubTotal: 0,
+        cartSubTotal: (0).toFixed(2),
         tax: 0,
-        cartTotal: 0,
-
+        cartTotal: (0).toFixed(2),
+        discount: 0,
         guaranty: 'all',
         company: 'all',
         price: 0,
@@ -53,7 +53,7 @@ class ProductProvider extends Component {
         //console.log("hello");
         const product = this.getItem(id);
         this.setState( ()=> {
-            return {detailProduct: product}
+            return { detailProduct: product }
         })
     }
 
@@ -96,10 +96,8 @@ class ProductProvider extends Component {
         let tempCart = [...this.state.cart];
 
         const selectedPr = tempCart.find(item => item.id === id);
-
         const index = tempCart.indexOf(selectedPr);
         const pr = tempCart[index];
-
         pr.count = pr.count + 1;
         pr.total = pr.count * pr.price;
 
@@ -158,7 +156,8 @@ class ProductProvider extends Component {
             }
         }, () => {
             this.addTotals();
-        })
+        });
+        console.log(this.state.cart);
 
     }
 
@@ -179,18 +178,20 @@ class ProductProvider extends Component {
         const index = tempProducts.indexOf(this.getItem(id));
 
         const product = tempProducts[index];
+        console.log(product);
 
         product.inCart = true;
-        product.count = 1;
+        product.count++;
         const price = product.price;
-        product.total = price;
+        product.total = price * product.count;
 
         this.setState(() => {
             return {products: tempProducts, cart: [...this.state.cart, product]};
         }, () => {
             this.addTotals();
-        })
+        });
 
+        console.log(this.state);
     }
 
     getCart = () => {
@@ -210,18 +211,36 @@ class ProductProvider extends Component {
         return product;
     }
 
+    isAdded = (id) => {
+        return this.state.cart.find(item => item.id ===id);
+    }
+
     addTotals = () => {
         let subTotal = 0;
         this.state.cart.map(item => subTotal += item.total);
-        const tempTax = subTotal * 0.1;
-        const tax = parseFloat(tempTax.toFixed(2));
-        const total = subTotal + tax;
+
+        let _discount = 0;
+
+        if(subTotal > 40) { _discount = 0.1;}
+        else if(subTotal > 20) { _discount = 0.05;}
+
+        let _tax = (subTotal * 0.13).toFixed(2);
+
+        let _cartTotal = (subTotal + _tax * ( 1 - _discount)).toFixed(2);
+
 
         this.setState({
             cartSubTotal: subTotal,
-            tax: tax,
-            cartTotal: total
-        })
+            cartTotal: _cartTotal,
+            tax: _tax,
+            discount: _discount
+        });
+
+    }
+
+    numberOfItems = () => {
+        let nr = 0;
+        return nr = this.state.cart.map(item => nr += item.count);
     }
 
     handleChange = (event) => {
@@ -293,6 +312,8 @@ class ProductProvider extends Component {
                 openCart: this.openCart,
                 closeCart: this.closeCart,
                 openLeftNavbar: this.openLeftNavbar,
+                isAdded: this.isAdded,
+                numberOfItems: this.numberOfItems,
             }}>
                 {this.props.children}
             </productContext.Provider>

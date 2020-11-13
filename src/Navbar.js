@@ -3,7 +3,8 @@ import './Navbar.scss';
 import { Link } from 'react-router-dom'
 //import { UserConsumer } from './userContext'
 import { ProductConsumer } from './context';
-import BigMenu from './BigMenu';
+import NavbarBigMenu from './Navbar_bigMenu';
+import NavbarCart from './Navbar_cart';
 
 
 export default class Navbar extends Component {
@@ -13,6 +14,7 @@ export default class Navbar extends Component {
         downMenuOpened: false,
         selected: 'home',
         beforeDropDown: '',
+        cartHover: false,
     }
 
     toogleOpen = () => {
@@ -36,49 +38,7 @@ export default class Navbar extends Component {
 
         this.setState({selected: name});
     }
-    /*
 
-    <Link to="/cart">
-        <ProductConsumer>
-
-            {({getCart, openCart}) => (
-                <div  onClick={openCart}>
-                    Razem do zaplaty: { getCart() } $
-                </div>
-            )}
-
-        </ProductConsumer>
-    </Link>
-
-    <UserConsumer>
-
-        {({login, logOut, logIn}) => (
-            <div>
-                {(login === '')
-                    ?
-                    <span>
-                        <button className="btn btn-info btn-l ml-2" onClick={logIn}>
-                            Zaloguj
-                        </button>
-                    </span>
-                    :
-                    <span>
-                        Witam {login}
-                        <button className="btn btn-info btn-l ml-2" onClick={logOut}>
-                            Wyloguj
-                        </button>
-                    </span>
-                }
-
-            </div>
-        )}
-
-    </UserConsumer>
-
-
-
-
-    */
 
     render() {
 
@@ -144,13 +104,19 @@ export default class Navbar extends Component {
                         )}
                     </ProductConsumer>
 
-                    <BigMenu hovered={this.state.selected} />
+                    <NavbarBigMenu hovered={this.state.selected} />
 
                 </div>
 
                 <div className="item item5">
 
                 </div>
+
+                <ProductConsumer>
+                    {({cart}) => {
+                        return(<NavbarCart items={cart} /> )
+                    }}
+                </ProductConsumer>
 
                 <div className="logging width-2x">
 

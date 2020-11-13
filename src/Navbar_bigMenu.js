@@ -1,11 +1,11 @@
 
 
 import React, { Component } from 'react'
-import './BigMenu.scss'
+import './Navbar_bigMenu.scss'
 
 
 
-export default class BigMenu extends Component {
+export default class NavbarBigMenu extends Component {
 
     state = {
         nowImg: 1,
@@ -35,8 +35,8 @@ export default class BigMenu extends Component {
                         <img alt="nic" src={imgName} />
                     </div>
                     <div className="downDiv">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                         when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
 
@@ -54,7 +54,7 @@ export default class BigMenu extends Component {
                         <div className="imageDiv">
                             <img alt="nic" src="img/user-32.ico" />
                         </div>
-                        
+
                     </div>
                     <div className="it down" onMouseEnter={() => {this.changeImg(2)} }>
                         <div className="name">
@@ -81,7 +81,7 @@ export default class BigMenu extends Component {
                             <img alt="nic" src="img/bar-chart-3-32.ico" />
                         </div>
 
-                    </div> 
+                    </div>
                     <div className="it down" onMouseEnter={() => {this.changeImg(4)} }>
                         <div className="name">
                             Inne Menuu jakieś tam
@@ -114,7 +114,7 @@ export default class BigMenu extends Component {
 
                 </div>
 
-            
+
 
             </div>
         )
