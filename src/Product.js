@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
 import {ProductConsumer } from './context'
 import './Product.scss'
+import './Product_RWD.scss'
 import ProductColors from './ProductColors'
 
 
@@ -71,10 +71,10 @@ export default class Product extends Component {
                             <div className="head">{title}</div>
                             <div className={`bgAddedColor ${value.isAdded(id) ? 'x' : 'y'}`}></div>
 
-                            <div className={imgClass}>
-                                <Link to="/details">
+                            <div className={imgClass} onClick={() => value.openModal(id) }>
+
                                     <img src={img} alt="product" />
-                                </Link>
+
                             </div>
 
                             <div className={`btnCart ${value.isAdded(id) ? 'added' : ''}`}
@@ -96,6 +96,10 @@ export default class Product extends Component {
 
                             </div>
 
+
+                            <div className={`removeBtn ${value.isAdded(id) ? 'added' : ''}`} onClick={() => value.removeItem(id)}>
+                                <img src="img/delete-32.ico" alt="product" />
+                            </div>
 
                             <div className="priceDiv">
 

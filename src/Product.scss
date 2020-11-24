@@ -105,7 +105,7 @@ div { box-sizing: border-box; }
 
 
 
-    &:hover {
+    &.hov {
         .bgAddedColor {
             transform: skewY(235deg);
             top: -40%;
@@ -174,7 +174,7 @@ div { box-sizing: border-box; }
     }
 
 
-    &:hover {
+    &.hov {
         .detailsInfo {
             opacity: 1;
             bottom: 30%;
@@ -199,8 +199,8 @@ div { box-sizing: border-box; }
             .items {
                 margin-top: 5px;
                 display: flex;
-                width: 85%;
                 padding-left: 17%;
+                padding-right: 12%;
 
                 .it {
                     height: 15px;
@@ -251,7 +251,7 @@ div { box-sizing: border-box; }
 
 
 
-    &:hover {
+    &.hov {
         .priceDiv { bottom: 18% }
         .btnCart, .added { bottom: 6%}
     }
@@ -276,6 +276,18 @@ div { box-sizing: border-box; }
             font-weight: bold;
             text-align: center;
         }
+    }
+
+    .removeBtn {
+        position: absolute;
+        bottom: -30%;
+        right: 0;
+        background-color: #542b2b;
+        width: 65px;
+        padding: 9px 16px;
+        transition: .7s;
+        transition-delay: 0.5s;
+        &.added { bottom: 0}
     }
 
 

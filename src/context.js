@@ -12,7 +12,7 @@ class ProductProvider extends Component {
 
         products: [],
         filteredProducts: [],
-        detailProduct: detailProduct,
+        //detailProduct: detailProduct,
         cart: [],
         modalOpen: false,
         leftNavbarOpen: false,
@@ -66,15 +66,15 @@ class ProductProvider extends Component {
 
     openModal = id => {
         const product = this.getItem(id);
-        this.setState(() => {
-            return {modalProduct: product, modalOpen: true}
-        })
+        this.setState(
+            {modalProduct: product, modalOpen: true}
+        )
     }
 
-    closeModal = id => {
-        this.setState(() => {
-            return {modalOpen: false}
-        })
+    closeModal = () => {
+        this.setState(
+             {modalOpen: false}
+        )
     }
 
     openCart = () => {
@@ -88,9 +88,6 @@ class ProductProvider extends Component {
             return {cartOpen: false}
         })
     }
-
-
-
 
     increment = (id) => {
         let tempCart = [...this.state.cart];
