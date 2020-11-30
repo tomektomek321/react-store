@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { ProductConsumer } from './context';
 import NavbarBigMenu from './Navbar_bigMenu';
 import NavbarCart from './Navbar_cart';
+import NavbarLogging from './NavbarLogging';
 
 
 export default class Navbar extends Component {
@@ -39,12 +40,16 @@ export default class Navbar extends Component {
         this.setState({selected: name});
     }
 
+    //componentDidMount() {
+    //    this.logRef.current.focus();
+    //}
+    //  ref={this.logRef}
 
     render() {
 
 
         return (
-
+        <div className="mainBg">
             <div className="topnav">
 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
@@ -118,24 +123,10 @@ export default class Navbar extends Component {
                     }}
                 </ProductConsumer>
 
-                <div className="logging width-2x">
+                <NavbarLogging />
 
-                    <div className="dropLogin">
-                        <div>
-                            <input className="form-control" placeholder="login.." type="text" />
-                        </div>
-                        <div>
-                            <input className="form-control" placeholder="password.." type="text" />
-                        </div>
-                        <div>
-                            <input type="button" className="btn btn-outline-primary logInBtn" value="Log" />
-                        </div>
-                    </div>
-
-                    <input type="button" className="btn btn-outline-primary" value="Login" />
-
-                </div>
-
+                {
+                /*
                 <div className="animateMenu">
 
                     <div className="mainIcon">
@@ -166,10 +157,46 @@ export default class Navbar extends Component {
 
 
                 </div>
-
-
+                */}
             </div>
+
+            <ProductConsumer>
+                {({caruselSelected}) => {
+
+                    let imgName = "img/electphoto" + caruselSelected + ".jpg";
+
+                    return(
+                        <div className="bgImg">
+                            <img src={imgName} alt="x" />
+                            <div className="lorem">
+                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                            </div>
+
+
+                            <div className="text1">
+
+                                <div className={` ${ (caruselSelected === 0) ? "selected" : "" } `} >Check our products</div>
+
+                                <div className={`midd ${ (caruselSelected === 1) ? "selected" : "" } `} >Contact us</div>
+
+                                <div className={` ${ (caruselSelected === 2) ? "selected" : "" } `} >Other info</div>
+
+                            </div>
+
+                        </div>
+                    )
+                }}
+            </ProductConsumer>
+
+
+        </div>
 
         )
     }
 }
+
+/*  className={` ${(caruselSelected % 2 === 0) ? "hiding" : "showing"} `}          */

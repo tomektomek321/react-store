@@ -8,7 +8,7 @@ import Cart from './cart'
 import Navbar from './Navbar'
 import PhoneFilter from './PhoneFilter';
 import LeftNavbar from './LeftNavbar';
-//import 'bootstrap/dist/js/bootstrap.min.js';
+import CaruselDiscount from './CaruselDiscount'
 import './App.scss';
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
       <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       <React.Fragment>
         <Navbar />
+        <CaruselDiscount />
         <PhoneFilter />
         <Switch>
           <Route exact path="/" component={ProductsComponent} />

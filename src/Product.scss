@@ -22,14 +22,13 @@ div { box-sizing: border-box; }
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #555461;
-        border: 1px solid #5a5869;
+        background-color: #c0c0c0;
+        border: 1px solid #abaab5;
         transform: rotateY(0deg);
         backface-visibility: hidden;
         overflow: hidden;
         transition: 1s;
         z-index: 2;
-        padding: 1px;
 
         &.detailsShowed {
             transform: rotateY(-180deg);

@@ -11,6 +11,7 @@ class ProductProvider extends Component {
     state = {
 
         products: [],
+        caruselSelected: 0,
         filteredProducts: [],
         //detailProduct: detailProduct,
         cart: [],
@@ -32,9 +33,23 @@ class ProductProvider extends Component {
 
     componentDidMount() {
         this.setProducts();
+        let _t = this;
+        setInterval(function() {
+            _t.changeCarusel();
+        }, 6000);
+    }
+
+    changeCarusel = () => {
+
+        let nr = this.state.caruselSelected;
+        nr = (nr === 2) ? 0 : nr + 1;
+
+        //console.log(nr);
+        this.setState({caruselSelected: nr});
     }
 
     setProducts = () => {
+
         let temp = [];
         storeProducts.forEach(item => {
             const singleIt = {...item};
