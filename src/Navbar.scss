@@ -104,7 +104,7 @@
 
 .bgImg {
 	width: 100%;
-    height: 750px;
+    height: 850px;
 	margin-top: -90px;
 	position: relative;
 
@@ -136,6 +136,55 @@
 		@keyframes caruselShow {from {opacity: 0;} to {opacity: 1;}}
 		@keyframes caruselShow2 {from {opacity: 0;} to {opacity: 1;}}
 		@keyframes caruselHide {from {opacity: 1;} to {opacity: 0;}}*/
+	}
+
+
+	.text2 {
+		position: absolute;
+		left: 4%;
+		width: 27%;
+		font-size: 45px;
+
+		.itek {
+			display: flex;
+			flex-direction: row;
+			> div.it {
+				//background-color: rgba(107, 49, 49, 0.46);
+				margin: 10px 0;
+				color: white;
+				padding: 25px 30px 25px 0;
+				width: 99%;
+				text-align: right;
+				transition: 1s;
+				border: 1px solid transparent;
+				cursor: pointer;
+			}
+
+			> div.pip {
+				margin: 10px 0;
+				width: 1%;
+				//background-color: rgba(221, 216, 216, 0.46);
+			}
+
+			&.ac {
+
+				.it {
+					border-top: 1px solid rgb(0, 213, 255);
+					border-bottom:1px solid rgb(0, 213, 255);
+					background-color: rgba(26, 51, 56, 0.4);
+				}
+
+				.it { color: rgba(0, 213, 255, 100%); }
+				//.pip { background-color: rgba(0, 213, 255, 100%); }
+
+			}
+
+		}
+
+
+
+
+
 	}
 
 	.text1 {

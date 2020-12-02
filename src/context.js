@@ -33,10 +33,10 @@ class ProductProvider extends Component {
 
     componentDidMount() {
         this.setProducts();
-        let _t = this;
+        /*let _t = this;
         setInterval(function() {
             _t.changeCarusel();
-        }, 6000);
+        }, 6000);*/
     }
 
     changeCarusel = () => {

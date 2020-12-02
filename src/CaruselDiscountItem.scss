@@ -7,20 +7,23 @@ div {box-sizing: border-box;}
     height: 400px;
 
     .ins {
-        background-color: #c13b3b;
-        margin: 10px 5px;
+        background-color:  rgba( #c13b3b, 0.7);
+        margin: 0px 5px;
         height: 100%;
         color: white;
 
         .headek1 {
-            height: 50px;
-            padding-top: 15px;
+            height: 45px;
+            padding-top: 8px;
             font-size: 20px;
             text-align: center;
+            background-color: #6d3939;
+            border: 1px solid #966767;
+            border-bottom: 1px solid #6d3939;
         }
 
         .cont {
-            height: 320px;
+            height: 295px;
 
             img {
                 width: 100%;
@@ -30,9 +33,12 @@ div {box-sizing: border-box;}
         }
 
         .footer1 {
-            height: 30px;
-            font-size: 20px;
+            height: 40px;
+            font-size: 28px;
             text-align: center;
+            background-color: #6d3939;
+            border: 1px solid #966767;
+            border-top: 1px solid #6d3939;
         }
 
 

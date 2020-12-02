@@ -9,6 +9,7 @@ import Navbar from './Navbar'
 import PhoneFilter from './PhoneFilter';
 import LeftNavbar from './LeftNavbar';
 import CaruselDiscount from './CaruselDiscount'
+import Footer from './Footer'
 import './App.scss';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 
         <Modal />
         <LeftNavbar />
+        <Footer />
       </React.Fragment>
 
     </div>

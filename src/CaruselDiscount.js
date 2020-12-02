@@ -61,7 +61,7 @@ export default class CaruselDiscount extends Component {
             <div className="caruselContent">
 
                 <div className="header1">
-                    PROMOCYJKI
+                    LAST BOUGHT PRODUCTS IN PAST MONTH
                 </div>
 
                 <div className="caruselDiscount">
@@ -77,13 +77,17 @@ export default class CaruselDiscount extends Component {
                             {value => {
                                 return value.filteredProducts.map(product=> {
                                     console.log(1);
-
-                                    return <CaruselDiscountItem
+                                    if(product.id < 7) {
+                                        return <CaruselDiscountItem
                                                 key={product.id}
                                                 product={product}
                                                 animation={this.setAnimationClass}
                                                 setNumber={this.setNumber}
                                             />
+                                    } else {
+                                        return null;
+                                    }
+
                                 })
                             }}
 

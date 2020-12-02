@@ -16,6 +16,7 @@ export default class Navbar extends Component {
         selected: 'home',
         beforeDropDown: '',
         cartHover: false,
+        viewShowed: 0,
     }
 
     toogleOpen = () => {
@@ -38,6 +39,18 @@ export default class Navbar extends Component {
 
 
         this.setState({selected: name});
+    }
+
+    changeView = (id) => {
+
+        /*let view = this.state.viewShowed;
+        view++;
+        if(view === 4) {
+            view = 0;
+        }
+
+        this.setState({viewShowed: view });*/
+        this.setState({viewShowed: id });
     }
 
     //componentDidMount() {
@@ -176,8 +189,24 @@ export default class Navbar extends Component {
                                 Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
                             </div>
 
+                            <div className="text2">
+                                <div className={`itek ${ (this.state.viewShowed === 0) ? "ac" : "" } `} onClick={() => this.changeView(0) } >
+                                    <div className="it">Check our products</div><div className="pip"></div>
+                                </div>
+                                <div className={`itek ${ (this.state.viewShowed === 1) ? "ac" : "" } `} onClick={() => this.changeView(1) } >
+                                    <div className="it">See our clients</div><div className="pip"></div>
+                                </div>
+                                <div className={`itek ${ (this.state.viewShowed === 2) ? "ac" : "" } `} onClick={() => this.changeView(2) } >
+                                    <div className="it">Find us</div><div className="pip"></div>
+                                </div>
+                                <div className={`itek ${ (this.state.viewShowed === 3) ? "ac" : "" } `} onClick={() => this.changeView(3) } >
+                                    <div className="it">Contact us</div><div className="pip"></div>
+                                </div>
 
-                            <div className="text1">
+                            </div>
+
+
+                            {/*<div className="text1">
 
                                 <div className={` ${ (caruselSelected === 0) ? "selected" : "" } `} >Check our products</div>
 
@@ -185,7 +214,7 @@ export default class Navbar extends Component {
 
                                 <div className={` ${ (caruselSelected === 2) ? "selected" : "" } `} >Other info</div>
 
-                            </div>
+                            </div>*/}
 
                         </div>
                     )
