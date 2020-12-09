@@ -1,8 +1,6 @@
 
 import React from 'react';
-import ProductsComponent from './ProductsComponent';
 import {Route, Switch} from 'react-router-dom';
-import Details from './Details';
 import Modal from './modal';
 import Cart from './cart'
 import Navbar from './Navbar'
@@ -11,6 +9,10 @@ import LeftNavbar from './LeftNavbar';
 import CaruselDiscount from './CaruselDiscount'
 import Footer from './Footer'
 import './App.scss';
+import ProductComponentHooks from './ProductComponentHooks'
+import ModalHook from './modalHook';
+import CartSite from './CartSite';
+import FullCart from './FullCart';
 
 function App() {
 
@@ -22,11 +24,13 @@ function App() {
         <CaruselDiscount />
         <PhoneFilter />
         <Switch>
-          <Route exact path="/" component={ProductsComponent} />
-          <Route path="/details" component={Details} />
+          <Route exact path="/" component={ProductComponentHooks} />
+          <Route path="/product/:id" component={ModalHook} />
+          <Route path="/cart/:id" component={CartSite} />
           <Route path="/cart" component={Cart} />
+          <Route path="/fullCart" component={FullCart} />
         </Switch>
-
+        {/* <ProductComponentHooks /> */}
         <Modal />
         <LeftNavbar />
         <Footer />

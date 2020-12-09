@@ -3,6 +3,7 @@ import {ProductConsumer } from './context'
 import './Product.scss'
 import './Product_RWD.scss'
 import ProductColors from './ProductColors'
+import { Link } from 'react-router-dom'
 
 
 export default class Product extends Component {
@@ -70,11 +71,12 @@ export default class Product extends Component {
 
                             <div className="head">{title}</div>
                             <div className={`bgAddedColor ${value.isAdded(id) ? 'x' : 'y'}`}></div>
-
-                            <div className={imgClass} onClick={() => value.openModal(id) }>
-
+                            { console.log(img)}
+                            {/* <div className={imgClass} onClick={() => value.openModal(id) }> */}
+                            <div className={imgClass}>
+                                <Link to={`/product/${id}`}>
                                     <img src={img} alt="product" />
-
+                                </Link>
                             </div>
 
                             <div className={`btnCart ${value.isAdded(id) ? 'added' : ''}`}

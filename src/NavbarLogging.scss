@@ -2,22 +2,22 @@
 
 .logging {
 
-    padding: 10px 0px;
+    padding: 16px 0px;
     color: white;
     border: 0px solid red;
     margin: 2px 3px;
     transition: width 1s;
     position: relative;
-    text-align: right;
+    text-align: left;
 
-    &:hover {
+    &.hov {
         .dropLogin {
-            opacity: 1;
+            display: block;
         }
     }
 
     .dropLogin {
-        opacity: 0;
+        display: none;
         padding: 14px 20px 11px 20px;
         position: absolute;
         top: 100%;

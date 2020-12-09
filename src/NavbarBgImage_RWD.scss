@@ -1,0 +1,135 @@
+@media (min-width: 1071px) {
+
+    .bgImg {
+        .text2 {
+            width: 27%;
+            font-size: 45px;
+            flex-direction: column;
+
+            .itek {
+
+                > div.it {
+                    text-align: right;
+                }
+            }
+        }
+
+        .text3 {
+            width: 29%;
+
+            .itek {
+                > div.it {
+
+                    .title {
+                        font-size: 36px;
+                    }
+
+                    font-size: 18px;
+                    line-height: 29px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1070px) and (min-width: 951px) {
+    .bgImg {
+        .text2 {
+            width: 27%;
+            font-size: 30px;
+            flex-direction: column;
+
+            .itek {
+
+                > div.it {
+                    text-align: right;
+                }
+            }
+        }
+
+        .text3 {
+            width: 29%;
+
+            .itek {
+                > div.it {
+                    .title {
+                        font-size: 30px;
+                    }
+
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 780px) and (max-width: 950px) {
+    .bgImg {
+        .text2 {
+            width: 40%;
+            font-size: 23px;
+            flex-direction: column;
+
+            .itek {
+
+                > div.it {
+                    text-align: center;
+                }
+            }
+        }
+
+        .text3 {
+            width: 35%;
+
+            .itek {
+
+                > div.it {
+                    .title {
+                        font-size: 30px;
+                    }
+
+                    font-size: 17px;
+                    line-height: 19px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 779px) {
+    .bgImg {
+        .text2 {
+            width: 93%;
+            font-size: 23px;
+            flex-direction: row;
+
+            .itek {
+
+                > div.it {
+                    text-align: center;
+                }
+            }
+        }
+
+        .text3 {
+            width: 93%;
+            bottom: 2%;
+            background-color:  rgba(0, 0, 0, 0.65);
+
+            .itek {
+                > div.it {
+                    .title {
+                        font-size: 30px;
+                    }
+
+                    font-size: 17px;
+                    line-height: 19px;
+                }
+            }
+        }
+    }
+}

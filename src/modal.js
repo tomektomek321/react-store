@@ -12,7 +12,7 @@ export default class Modal extends Component {
     }
 
     handleChange = () => {
-        console.log(1);
+        //console.log(1);
     }
 
     render() {
@@ -32,7 +32,7 @@ export default class Modal extends Component {
         return (
             <ProductConsumer>
                 {(value) => {
-                    console.log(value);
+                    //console.log(value);
 
                     if(!value.modalOpen) {
                         return null;
@@ -91,6 +91,13 @@ export default class Modal extends Component {
                                             <div className="div_price_add">
                                                 <div className="div_price">
                                                     100 $
+                                                </div>
+                                                <div className="div_price">
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star"></span>
+                                                    <span class="fa fa-star"></span>
                                                 </div>
 
                                                 <div className="div_add">

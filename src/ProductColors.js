@@ -53,7 +53,7 @@ const ProductColors = () => {
     const countDown = () => {setCounter(counter - 1); console.log(counter);}
 
     useEffect(() => {
-        console.log("component updated or updated");
+        //console.log("component updated or updated");
         if(counter > 0) {
             return;
         }

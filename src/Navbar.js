@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import './Navbar.scss';
+import './Navbar_RWD.scss';
 import { Link } from 'react-router-dom'
 //import { UserConsumer } from './userContext'
 import { ProductConsumer } from './context';
 import NavbarBigMenu from './Navbar_bigMenu';
 import NavbarCart from './Navbar_cart';
 import NavbarLogging from './NavbarLogging';
+import NavbarBgImage from './NavbarBgImage';
 
 
 export default class Navbar extends Component {
@@ -16,8 +18,18 @@ export default class Navbar extends Component {
         selected: 'home',
         beforeDropDown: '',
         cartHover: false,
-        viewShowed: 0,
+        caruselShowed: 0,
+        caruselTitles: [
+            'Check our products',
+            'See our clients',
+            'Find Us',
+            'Contact Us'
+        ]
     }
+
+
+    //const cart = useSelector((state) => state.cart);
+    //const { cartItems } = cart;
 
     toogleOpen = () => {
         this.setState({isOpen: !this.state.isOpen});
@@ -39,18 +51,6 @@ export default class Navbar extends Component {
 
 
         this.setState({selected: name});
-    }
-
-    changeView = (id) => {
-
-        /*let view = this.state.viewShowed;
-        view++;
-        if(view === 4) {
-            view = 0;
-        }
-
-        this.setState({viewShowed: view });*/
-        this.setState({viewShowed: id });
     }
 
     //componentDidMount() {
@@ -138,88 +138,9 @@ export default class Navbar extends Component {
 
                 <NavbarLogging />
 
-                {
-                /*
-                <div className="animateMenu">
-
-                    <div className="mainIcon">
-
-                    </div>
-
-                    <div className="downMenu">
-
-                        <div className="it down">
-                            <img alt="nic"  src="img/user-32.ico" />
-                        </div>
-                        <div className="it down">
-                            <img alt="nic"  src="img/basketball-32.ico" />
-                        </div>
-                        <div className="it down">
-                            <img alt="nic"  src="img/tennis-32.ico" />
-                        </div>
-                        <div className="it down">
-                            <img alt="nic"  src="img/bar-chart-3-32.ico" />
-                        </div>
-                        <div className="it down">
-                            <img alt="nic"  src="img/logout-32.ico" />
-                        </div>
-                        <div className="it main">
-                            <img alt="nic"  src="img/x-mark-3-32.ico" />
-                        </div>
-                    </div>
-
-
-                </div>
-                */}
             </div>
 
-            <ProductConsumer>
-                {({caruselSelected}) => {
-
-                    let imgName = "img/electphoto" + caruselSelected + ".jpg";
-
-                    return(
-                        <div className="bgImg">
-                            <img src={imgName} alt="x" />
-                            <div className="lorem">
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                            </div>
-
-                            <div className="text2">
-                                <div className={`itek ${ (this.state.viewShowed === 0) ? "ac" : "" } `} onClick={() => this.changeView(0) } >
-                                    <div className="it">Check our products</div><div className="pip"></div>
-                                </div>
-                                <div className={`itek ${ (this.state.viewShowed === 1) ? "ac" : "" } `} onClick={() => this.changeView(1) } >
-                                    <div className="it">See our clients</div><div className="pip"></div>
-                                </div>
-                                <div className={`itek ${ (this.state.viewShowed === 2) ? "ac" : "" } `} onClick={() => this.changeView(2) } >
-                                    <div className="it">Find us</div><div className="pip"></div>
-                                </div>
-                                <div className={`itek ${ (this.state.viewShowed === 3) ? "ac" : "" } `} onClick={() => this.changeView(3) } >
-                                    <div className="it">Contact us</div><div className="pip"></div>
-                                </div>
-
-                            </div>
-
-
-                            {/*<div className="text1">
-
-                                <div className={` ${ (caruselSelected === 0) ? "selected" : "" } `} >Check our products</div>
-
-                                <div className={`midd ${ (caruselSelected === 1) ? "selected" : "" } `} >Contact us</div>
-
-                                <div className={` ${ (caruselSelected === 2) ? "selected" : "" } `} >Other info</div>
-
-                            </div>*/}
-
-                        </div>
-                    )
-                }}
-            </ProductConsumer>
+            <NavbarBgImage />
 
 
         </div>

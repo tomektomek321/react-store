@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import NavbarLoggingUseForm from "./NavbarLoggingUseForm";
 import './NavbarLogging.scss';
 
@@ -9,15 +9,20 @@ function NavbarLogging() {
 
     const [updateValue, submitHandler, errors] = NavbarLoggingUseForm({});
 
+    let [formHover, setFormHover] = useState(false);
 
+    const hoverChange = () => setFormHover(formHover = !formHover);
 
+    useEffect(() => {
+        //console.log("noweffect");
+    });
 
 
 
 
 
     return (
-        <div className="logging width-2x">
+        <div className={` item logging width-2x  ${ formHover ? "hov" : "" }  `} onMouseEnter={hoverChange}  >
             <form>
                 <div className="dropLogin">
                     <div>

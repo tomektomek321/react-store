@@ -1,33 +1,43 @@
 
 
 .cartDiv {
-    padding: 13px 0 0 0;
-    display: flex;
-    flex-direction: row;
-
+    padding: 0px;
     position: relative;
 
-    &.hov { .cartDiv_downListDiv {display: block;} }
+    .cartDiv_onMenu {
+        padding: 17px 5px 17px 10px;
+        display: flex;
+        flex-direction: row;
+
+        &.hov { .cartDiv_downListDiv {display: block;} }
 
 
-    &:hover {
-        background-color: #bfbfbf;
-        //border-radius: 10px;
+        &:hover {
+            background-color: #bfbfbf;
+        }
+
+        .cartDiv_image {
+            text-align: center;
+            width: 35%;
+            cursor: pointer;
+        }
+
+        .cartDiv_price {
+            padding-top: 2px;
+            font-size: 23px;
+            text-align: left;
+            width: 65%;
+            cursor: pointer;
+        }
+
+        .cartDiv_amount {
+            background-color: red;
+            padding: 7px 11px;
+            border-radius: 50%;
+        }
     }
 
-    .cartDiv_image {
-        text-align: center;
-        width: 35%;
-        cursor: pointer;
-    }
 
-    .cartDiv_price {
-        padding-top: 2px;
-        font-size: 23px;
-        text-align: left;
-        width: 65%;
-        cursor: pointer;
-    }
 
     .cartDiv_downListDiv {
         position: absolute;

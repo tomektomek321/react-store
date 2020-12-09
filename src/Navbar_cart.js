@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import { ProductConsumer } from './context';
+import NavbarCartAmount from './NavbarCartAmount'
 
 export default class NavbarCart extends Component {
 
@@ -67,19 +69,25 @@ export default class NavbarCart extends Component {
             <ProductConsumer>
                 {({cart, cartTotal, cartSubTotal, tax, discount, numberOfItems}) => (
                     <div className={`item item6 cartDiv ${(this.state.cartHover) ? "hov" : ""} `}
-                            onMouseEnter={() => this.cartHover(cart)} onMouseLeave={() => this.cartHover(cart)}>
+                            >
+                        <div className="cartDiv_onMenu">
+                            <div className="cartDiv_amount">
+                                <Link to="/fullCart">
+                                    <NavbarCartAmount />
+                                </Link>
 
-                        <div className="cartDiv_image">
-                            <img alt="nic"  src="img/cart-59-32.ico" />
-                        </div>
-                        <div className="cartDiv_price">
-
-                            <div>
-                                {cartTotal} $
                             </div>
+                            <div className="cartDiv_image" onMouseEnter={() => this.cartHover(cart)} onMouseLeave={() => this.cartHover(cart)}>
+                                <img alt="nic"  src="img/cart-59-32.ico" />
+                            </div>
+                            <div className="cartDiv_price">
 
+                                <div>
+                                    {cartTotal} $
+                                </div>
+
+                            </div>
                         </div>
-
                         <div className="cartDiv_downListDiv">
                             <div className="cartDiv_">
                                 <div className="cart_items">

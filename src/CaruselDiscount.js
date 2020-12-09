@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './CaruselDiscount.scss'
+import './CaruselDiscount_RWD.scss'
 import {ProductConsumer} from './context';
 import CaruselDiscountItem from './CaruselDiscountItem'
 
@@ -33,7 +34,7 @@ export default class CaruselDiscount extends Component {
         let mod = ((this.state.shift + nr) > 0) ? (this.state.shift + nr) : Math.abs(this.state.shift - nr);
 
         let mod2 = ((mod) % 6);
-        console.log("mod z " + nr + " to: " + mod2);
+        //console.log("mod z " + nr + " to: " + mod2);
 
         return mod2;
     }
@@ -44,7 +45,7 @@ export default class CaruselDiscount extends Component {
         if(!this.state.nowChange) return "";
 
         let absNr = ((this.state.shift + nr) > 0) ? (this.state.shift + nr) : Math.abs(this.state.shift - nr);
-        console.log("shift maded: " + absNr);
+        //console.log("shift maded: " + absNr);
 
 
         if(this.state.dir === "left") {
@@ -76,7 +77,7 @@ export default class CaruselDiscount extends Component {
 
                             {value => {
                                 return value.filteredProducts.map(product=> {
-                                    console.log(1);
+                                    //console.log(1);
                                     if(product.id < 7) {
                                         return <CaruselDiscountItem
                                                 key={product.id}

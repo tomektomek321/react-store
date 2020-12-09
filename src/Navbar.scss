@@ -7,24 +7,25 @@
 
 	display: flex;
 	flex-wrap: wrap;
-	padding: 0px 5px 0 5px;
+	padding: 0px 5px 0px 5px;
     position: relative;
-	background-color: rgba(34, 34, 37, 0.46);
+	//background-color: rgba(34, 34, 37, 0.46);
     box-sizing: border-box;
 	margin: 15px -5px 0px -5px;
-	box-shadow: 0px 0px 7px 5px #191717;
+	box-shadow: 0px 0px 2px 1px #191717;
 	transition: 0.5s;
 	z-index: 5;
 
 
-	&:hover {
-		box-shadow: 0px 0px 9px 7px #ac0e4d;
+	//&:hover {
+		box-shadow: 0px 0px 2px 1px #ac0e4d;
 		//background-color: #ac0e4d;
-	}
+	//}
 
 	.logo, .item {
 		a { text-decoration: none; color: white; }
-		padding: 20px 0;
+
+		//display: inline-block;
 		border: 0px solid red;
 		margin: 2px 3px;
 		box-sizing: border-box;
@@ -34,15 +35,15 @@
 		position: inherit;
 	}
 
-
-	.logo { width: 130px;}
+	.item { padding: 26px 0;}
+	.logo { width: 130px; padding: 28px 0;}
 	.item1 { width: 85px;}
 	.item2 { width: 125px;}
 	.item3 { width: 125px;}
-	.item4 { width: 150px;	position: relative; }
-	.item5 { width: 45%;} /* max- */
-	.item6 { width: 190px; }
-	.logging { width: 85px;}
+	.item4 { width: 180px;	position: relative; }
+	.item5 { }
+	.item6 { width: 220px; margin-left: auto; }
+	.logging { width: 115px; }
 	.animateMenu { width: 70px;}
 
 
@@ -84,149 +85,22 @@
     .slide {
 		transition: .5s;
 		position: absolute;
-        top: 0px;
+        top: 1px;
         //left: 0px;
         display: inline-block;
         background-color: #ce4242;
         width: 150px;
-        height: 62px;
+        height: 72px;
         opacity: 1;
 		z-index: 2;
 
-        &.slide200 { left: 130px; width: 95px; }
+        &.slide200 { left: 135px; width: 95px; }
         &.slide400 { left: 215px; width: 140px; }
         &.slide600 { left: 350px; width: 130px; }
-        &.slide800 { left: 475px; width: 170px; }
+        &.slide800 { left: 485px; width: 190px; }
 
 	}
 
 }
 
-.bgImg {
-	width: 100%;
-    height: 850px;
-	margin-top: -90px;
-	position: relative;
-
-	.lorem {
-		padding-top: 100px;
-		color: white;;
-	}
-
-
-	img {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-/*
-		&.showing {
-			animation-name: caruselShow;
-			animation-duration: 3s;
-		}
-
-		&.hiding {
-
-			animation-name: caruselShow2;
-			animation-duration: 3s;
-		}
-
-		@keyframes caruselShow {from {opacity: 0;} to {opacity: 1;}}
-		@keyframes caruselShow2 {from {opacity: 0;} to {opacity: 1;}}
-		@keyframes caruselHide {from {opacity: 1;} to {opacity: 0;}}*/
-	}
-
-
-	.text2 {
-		position: absolute;
-		left: 4%;
-		width: 27%;
-		font-size: 45px;
-
-		.itek {
-			display: flex;
-			flex-direction: row;
-			> div.it {
-				//background-color: rgba(107, 49, 49, 0.46);
-				margin: 10px 0;
-				color: white;
-				padding: 25px 30px 25px 0;
-				width: 99%;
-				text-align: right;
-				transition: 1s;
-				border: 1px solid transparent;
-				cursor: pointer;
-			}
-
-			> div.pip {
-				margin: 10px 0;
-				width: 1%;
-				//background-color: rgba(221, 216, 216, 0.46);
-			}
-
-			&.ac {
-
-				.it {
-					border-top: 1px solid rgb(0, 213, 255);
-					border-bottom:1px solid rgb(0, 213, 255);
-					background-color: rgba(26, 51, 56, 0.4);
-				}
-
-				.it { color: rgba(0, 213, 255, 100%); }
-				//.pip { background-color: rgba(0, 213, 255, 100%); }
-
-			}
-
-		}
-
-
-
-
-
-	}
-
-	.text1 {
-		position: absolute;
-		text-align: center;
-		bottom: 0%;
-		width: 100%;
-		font-size: 45px;
-		color: white;
-		font-weight: bold;
-
-
-
-		display: flex;
-		flex-direction: row;
-
-
-		> div {
-			width: 33.3%;
-			background-color: rgba(0, 0, 0, 0.76);
-			padding: 10px 0;
-			margin: 0px px 0 1px;
-			border-top: 2px solid white;
-			border-bottom: 2px solid white;
-			cursor: pointer;
-
-
-			&.midd {
-				border-left: 2px solid white;
-				border-right: 2px solid white;
-			}
-
-			&.selected {
-				background-color: rgba(107, 49, 49, 0.76);
-				animation-name: carusel;
-				animation-timing-function: ease-out;
-				animation-duration: 1s;
-			}
-
-			@keyframes carusel {from {opacity: 0;} to {opacity: 1;}}
-		}
-	}
-
-}
 
