@@ -1,7 +1,8 @@
 .productsContainer {
     display: flex;
     flex-wrap: wrap;
-    align-content: space-around;
+    //align-content: space-around;
+    justify-content: center;
 
     > div {
         //min-width: 400px;

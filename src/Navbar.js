@@ -77,7 +77,7 @@ export default class Navbar extends Component {
 
                 </div>
 
-                <div className={`logo `}><Link to="/">BestCompany</Link></div>
+                <div className={`logo `}><Link to="/">bestCompany</Link></div>
 
 
                 <div className={`item item1 ${('home' === this.state.selected) ? 'active' : ''}`} onClick={() => this.selectSite('home')}><Link to="/">Home</Link></div>

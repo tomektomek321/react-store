@@ -1,20 +1,21 @@
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Product from './Product'
-import { useDispatch, useSelector } from 'react-redux'
-import { listProducts } from './_actions/productActions';
-
+//import { useDispatch, useSelector } from 'react-redux'
+import { storeProducts } from './TodoDB'
+//import { listProducts } from './_actions/productActions';
+import "./ToDoComponent.scss";
 
 
 export default function ProductComponentHooks() {
 
-    const dispatch = useDispatch();
+    //const dispatch = useDispatch();
 
-    const productList = useSelector((state) => state.productList);
+    //const productList = useSelector((state) => state.productList);
 
-    const { loading, error, products} = productList;
+    //const { loading, error, products} = productList;
 
-
+    const [products, setProducts] = useState([]);
 
 
     /*const [products, setProducts] = useState([]);
@@ -23,8 +24,8 @@ export default function ProductComponentHooks() {
 
 
     useEffect(() => {
-
-        dispatch(listProducts());
+        setProducts(storeProducts);
+        //dispatch(listProducts());
     // eslint-disable-next-line
     }, []);
 
@@ -54,23 +55,30 @@ export default function ProductComponentHooks() {
 
 
     return (
-        <div>
-            {loading ? (
-
-                    <div>loading..</div>
-
-                ) : error ? (
-                    {error}
-
-                ) : (
-
-                    products.map(product => {
-                        return <Product key={product.id} product={product} />
-                    })
-
-                )
-            }
-
+        <div className="container productsContainer">
+            {products.map((product, index) => {
+                return <Product key={index} product={product} />
+            })}
         </div>
+
+
+        // <div>
+        //     {loading ? (
+
+        //             <div>loading..</div>
+
+        //         ) : error ? (
+        //             {error}
+
+        //         ) : (
+
+        //             products.map((product, index) => {
+        //                 return <Product key={index} product={product} />
+        //             })
+
+        //         )
+        //     }
+
+        // </div>
     )
 }

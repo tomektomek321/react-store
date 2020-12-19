@@ -12,13 +12,24 @@
 	//background-color: rgba(34, 34, 37, 0.46);
     box-sizing: border-box;
 	margin: 15px -5px 0px -5px;
-	box-shadow: 0px 0px 2px 1px #191717;
+	//box-shadow: 0px 0px 2px 1px #191717;
 	transition: 0.5s;
 	z-index: 5;
+	background-color: rgba(#140f0f, 0.6);
+	animation: 2s showTopNav;
+
+	@keyframes showTopNav {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 
 
 	//&:hover {
-		box-shadow: 0px 0px 2px 1px #ac0e4d;
+		//box-shadow: 0px 0px 2px 1px #ac0e4d;
 		//background-color: #ac0e4d;
 	//}
 
@@ -36,7 +47,7 @@
 	}
 
 	.item { padding: 26px 0;}
-	.logo { width: 130px; padding: 28px 0;}
+	.logo { width: 130px; padding: 28px 0; text-decoration: underline; font-size: 16px; }
 	.item1 { width: 85px;}
 	.item2 { width: 125px;}
 	.item3 { width: 125px;}
@@ -48,7 +59,7 @@
 
 
 	.logo {
-		background-color: black;
+		//background-color: black;
 		margin: 0px;
 		letter-spacing: 1px;
 	}

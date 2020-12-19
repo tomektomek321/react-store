@@ -1,6 +1,7 @@
 import bcrypt from 'bcryptjs';
 
-
+// node  --experimental-modules	path
+//mongodb://mongodb.tomek.com:27017
 const todosDB = [
     { 'id': 0, 'zadanie': "cos tam zrobic, nie wiem co", 'done': true },
     { 'id': 1, 'zadanie': "cos tam zrobic, nie wiem co", 'done': false },
@@ -169,7 +170,7 @@ export const ecomProducts = {
       {
         name: 'Nike Slim Shirt',
         category: 'Shirts',
-        image: '/images/p1.jpg',
+        image: 'img/product-1.png',
         price: 120,
         countInStock: 10,
         brand: 'Nike',
