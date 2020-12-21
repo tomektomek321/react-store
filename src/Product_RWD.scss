@@ -1,5 +1,5 @@
 
-@media (max-width: 520px) {
+@media (min-width: 471px) and (max-width: 520px) {
     .cartProductDiv {
 
         .detailsInfo .colorsDiv .items .it {
@@ -10,7 +10,7 @@
 }
 
 
-@media (max-width: 470px) {
+@media (min-width: 411px) and (max-width: 470px) {
 
     .cartProductDiv {
 
@@ -27,12 +27,12 @@
 
 }
 
-@media (max-width: 410px) {
+@media  (min-width: 366px) and (max-width: 410px) {
 
     .cartProductDiv {
 
         .detailsInfo .colorsDiv .items .it {
-            margin: 4px 5px;
+            margin: 4px 4px;
             height: 11px;
         }
 

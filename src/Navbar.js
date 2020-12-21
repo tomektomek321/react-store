@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom'
 //import { UserConsumer } from './userContext'
 import { ProductConsumer } from './context';
 import NavbarBigMenu from './Navbar_bigMenu';
-import NavbarCart from './Navbar_cart';
-import NavbarLogging from './NavbarLogging';
+//import NavbarCart from './Navbar_cart';
+//import NavbarLogging from './NavbarLogging';
 import NavbarBgImage from './NavbarBgImage';
+import NavbarCartFunc from './NavbarCartFunc';
 
 
 export default class Navbar extends Component {
@@ -130,13 +131,15 @@ export default class Navbar extends Component {
 
                 </div>
 
-                <ProductConsumer>
+                <NavbarCartFunc />
+
+                {/* <ProductConsumer>
                     {({cart}) => {
                         return(<NavbarCart items={cart} /> )
                     }}
-                </ProductConsumer>
+                </ProductConsumer> */}
 
-                <NavbarLogging />
+                {/* <NavbarLogging /> */}
 
             </div>
 

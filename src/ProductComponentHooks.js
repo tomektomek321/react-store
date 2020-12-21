@@ -1,10 +1,11 @@
 
 import React, { useEffect, useState } from 'react'
-import Product from './Product'
+//import Product from './Product'
 //import { useDispatch, useSelector } from 'react-redux'
 import { storeProducts } from './TodoDB'
 //import { listProducts } from './_actions/productActions';
 import "./ToDoComponent.scss";
+import ProductFunc from './ProductFunc';
 
 
 export default function ProductComponentHooks() {
@@ -57,7 +58,7 @@ export default function ProductComponentHooks() {
     return (
         <div className="container productsContainer">
             {products.map((product, index) => {
-                return <Product key={index} product={product} />
+                return <ProductFunc key={index} product={product} />
             })}
         </div>
 
