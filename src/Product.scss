@@ -14,11 +14,12 @@ div { box-sizing: border-box; }
     transition: 1s;
     perspective: 800px;
     transform-style: preserve-3d;
+    opacity: 0;
 
-    &:hover {
-        //border: 1px solid #636363 !important;
+
+    &.slideLeft {
+        animation: slideLeft 1s forwards;
     }
-
 
     .divProduct_front {
         position: absolute;
@@ -26,77 +27,19 @@ div { box-sizing: border-box; }
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #3e3939;
-        border: 1px solid #3e3939;
+        background-color: #ececec;
+        border: 1px solid #f1f1f1;
         transform: rotateY(0deg);
         backface-visibility: hidden;
         overflow: hidden;
         transition: 1s;
         z-index: 2;
+        border-radius: 20px;
 
         &.detailsShowed {
             transform: rotateY(-180deg);
         }
 
-    }
-
-    .divProduct_back {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transform: rotateY(180deg);
-        transition: 1s;
-        z-index: 1;
-
-        &.detailsShowed {
-            transform: rotateY(0deg);
-        }
-
-        .divProduct_back_content {
-            background-color: #555461;
-            width: 100%;
-            height: 100%;
-            color: white;
-            font-size: 14px;
-            padding: 1px;
-            border: 1px solid #888888;
-            overflow: hidden;
-
-            .details_header {
-                background-color: #44444b;
-                border: 0px solid red;
-                text-align: center;
-                padding: 10px 0 10px 0;
-                font-size: 21px;
-            }
-
-            .details_item {
-                display: flex;
-                border-bottom: 1px solid #131313;
-
-
-                .details_item--name {
-                    width: 50%;
-                    padding: 14px;
-                    background-color: #555461;
-                }
-
-                .details_item--value {
-                    width: 50%;
-                    padding: 14px;
-                    background-color: #4a4955;
-                }
-
-            }
-
-
-
-
-
-
-        }
     }
 
 }
@@ -107,39 +50,18 @@ div { box-sizing: border-box; }
     height: 100%;
 
 
-
-    &.hov {
-        .divProduct_front {
-
-        }
-
-        .bgAddedColor {
-            transform: skewY(235deg);
-            top: -40%;
-            left: 0%;
-        }
-
-        .head { top: 0%; }
-
-        .productImg  {
-            padding-top: 20%;
-            height: 70%;
-            img { height: 80%; width: 55%; }
-        }
-
-    }
-
     .bgAddedColor {
         position: absolute;
         top: -50%;
         width: 100%;
         height: 100%;
-        background-color: rgb(47, 47, 143);
+        background-color: #c5c5c5;
         transform: skewY(345deg);
         transition: 0.5s;
 
-        &.y { background-color: rgb(47, 47, 143);}
+        &.y { background-color: #c5c5c5;}
         &.x { background-color:#542b2b;}
+
     }
 
     &.hov {
@@ -181,80 +103,9 @@ div { box-sizing: border-box; }
     }
 
 
-    &.hov {
-        .detailsInfo {
-            opacity: 1;
-            bottom: 30%;
-        }
-    }
-
-    .detailsInfo {
-        position: absolute;
-        bottom: -40%;
-        right: 1%;
-        width: 45%;
-        opacity: 0;
-        transition: 0.5s;
-        z-index: 2;
-
-        .colorsDiv {
-
-            color: white;
-            font-size: 20px;
-            text-align: center;
-
-            .items {
-                margin-top: 5px;
-                display: flex;
-                padding-left: 17%;
-                padding-right: 12%;
-
-                .it {
-                    height: 15px;
-                    width: 15px;
-                    //margin: 4px 8px;
-                    border-radius: 9px;
 
 
-                    &.red { background-color: red;}
-                    &.green { background-color: green;}
-                    &.black { background-color: black;}
-                    &.yellow { background-color: yellow;}
-                    &.blue { background-color: blue;}
-                }
 
-            }
-
-        }
-
-        .info {
-            margin-top: 10px;
-
-            .name {font-size: 20px; color: rgb(237, 241, 232);}
-            .info {font-size: 13px; color: rgb(204, 204, 167);}
-            > div {
-                margin-bottom: 10px;
-                text-align: center;
-            }
-
-            .text {
-                margin-top: 15px;
-                background-color: #5a5869;
-                color: white;
-                padding: 5px;
-                border: 1px solid rgb(136, 121, 94);
-                border-radius: 5px;
-                width: 65%;
-                margin-left: 18%;
-
-                &:hover {
-                    border: 1px solid rgb(167, 161, 149);
-                    cursor: pointer;
-                }
-            }
-        }
-
-    }
 
 
 
@@ -276,7 +127,7 @@ div { box-sizing: border-box; }
             margin-bottom: 5px;
             width: 100%;
             border: 0px solid red;
-            color: wheat;
+            color: #404040;
             padding: 15px;
             border-radius: 10px;
             font-size: 40px;
@@ -330,7 +181,7 @@ div { box-sizing: border-box; }
         .name {
             width: 70%;
             padding: 13px 0 15px 0;
-            background-color: #21202b;
+            background-color: #949494;
 
             &.added {
                 background-color: #542b2b;
@@ -367,18 +218,104 @@ div { box-sizing: border-box; }
             color: wheat;
             margin-bottom: 10px;
         }
-/*
-        .add {
+    }
 
 
-            .added {
-                border: 1px solid red;
-                text-align: center;
-                background-color: #ecc3c3;
-                padding: 7px 4px;
+    &.hov {
+
+        .bgAddedColor {
+            transform: skewY(235deg);
+            top: -40%;
+            left: 0%;
+
+            //&.y { background-color: #9b9797 !important; }
+        }
+
+        .head {
+            top: 0%;
+            color: black;
+        }
+
+        .productImg  {
+            padding-top: 20%;
+            height: 70%;
+            img { height: 80%; width: 55%; }
+        }
+
+        .detailsInfo .colorsDiv {
+            color: black;
+        }
+
+        .detailsInfo .info .name {
+            color: black;
+        }
+
+        .detailsInfo .info .info {
+            color: #414141;
+        }
+
+    }
+
+
+}
+
+body.dark-theme {
+
+    .cartProductDiv {
+
+
+        .divProduct_front {
+            background-color: rgb(36, 33, 33);
+            border: 1px solid black;
+
+            .form-control {
+                background-color: black;
+                color: white;
+            }
+        }
+
+
+        .bgAddedColor { background-color: #414141 !important; }
+
+        .head {
+            //top: 0%;
+            color: white;
+        }
+
+        .detailsInfo .colorsDiv {
+            color: white !important;
+        }
+
+        .detailsInfo .info .name {
+            color: white !important;
+        }
+
+        .detailsInfo .info .info {
+            color: white !important;
+        }
+
+
+        .btnCart {
+            .name {
+                background-color: #55526d;
+                border-radius: 5px 0 0 5px;
             }
 
-        }*/
+            .image {
+                background-color: #493d96;
+                border-radius: 0px 5px 5px 0px;
+            }
+        }
+
+        .priceDiv {
+            .btnPrice {
+                color: rgb(210, 204, 204);
+            }
+
+
+        }
+
+
     }
 
 
@@ -388,5 +325,56 @@ div { box-sizing: border-box; }
 @media (min-width: 1200px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1660px !important;
+    }
+}
+
+
+@media screen and (max-width: 700px){
+
+    .head {
+        font-size: 20px !important;
+    }
+
+
+    .priceDiv {
+
+        .btnPrice {
+            font-size: 25px !important;
+        }
+    }
+
+
+    .detailsInfo .info .text {
+        padding: 3px;
+        font-size: 12px;
+    }
+
+
+    .btnCart {
+        font-size: 16px !important;
+
+
+        .name {
+            width: 70%;
+            padding: 9px 0 9px 0 !important;
+            background-color: #949494;
+            color: black !important;
+            &.added {
+                background-color: #542b2b;
+            }
+
+        }
+
+        .image {
+            width: 30%;
+            background-color: #3b336d;
+            padding: 7px 0 0 0 !important;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
     }
 }

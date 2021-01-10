@@ -70,11 +70,11 @@ const ProductColors = () => {
         <div className="colorsDiv" onClick={addToDo}>
             <div>Colors</div>
             <div className="items" onClick={countDown}>
-                <div className="it red"></div>
-                <div className="it green"></div>
-                <div className="it black"></div>
-                <div className="it yellow"></div>
-                <div className="it blue"></div>
+                <div className="it "><div className="colorek red"></div></div>
+                <div className="it "><div className="colorek green"></div></div>
+                <div className="it "><div className="colorek black"></div></div>
+                <div className="it "><div className="colorek yellow"></div></div>
+                <div className="it "><div className="colorek blue"></div></div>
             </div>
         </div>
     )

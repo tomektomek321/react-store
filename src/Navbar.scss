@@ -1,6 +1,7 @@
 .mainBg {
 	overflow: hidden;
 	background-image: url("/public/img/electphoto0.jpg");
+	box-shadow: inset 0px 0px 20px 29px rgb(189, 180, 180);
 }
 
 .topnav {
@@ -99,7 +100,7 @@
         top: 1px;
         //left: 0px;
         display: inline-block;
-        background-color: #ce4242;
+        background-color: #000000;
         width: 150px;
         height: 72px;
         opacity: 1;

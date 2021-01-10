@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {ProductConsumer } from './context'
 import './Product.scss'
 import './Product_RWD.scss'
+import './Product_DetailsInfo.scss'
 import ProductColors from './ProductColors'
 import { Link } from 'react-router-dom'
 
@@ -136,7 +137,7 @@ export default class Product extends Component {
 
                     </div>
 
-                    <div className={`divProduct_back ${detailsShowed}`} onMouseLeave={this.showDetails}>
+                    {/* <div className={`divProduct_back ${detailsShowed}`} onMouseLeave={this.showDetails}>
 
                         <div className="divProduct_back_content">
 
@@ -146,7 +147,7 @@ export default class Product extends Component {
 
                         </div>
 
-                    </div>
+                    </div> */}
 
 
 

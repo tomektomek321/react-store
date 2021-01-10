@@ -105,7 +105,7 @@ export const storeProducts = [
     },
     {
         id: 8,
-        title: "Samsung Galaxy Note 10 Lite",
+        title: "Samsung Galaxy Note 10",
         img: "img/product-8.png",
         price: 332,
         company: "apple",

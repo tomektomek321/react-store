@@ -1,25 +1,33 @@
-@media (min-width: 1071px) {
+@media (min-width: 1321px) {
 
     .bgImg {
         .text2 {
-            width: 27%;
-            font-size: 45px;
+            width: 31%;
+            top: 20%;
+            font-size: 32px;
             flex-direction: column;
 
             .itek {
 
                 > div.it {
+                    padding: 25px 30px 25px 0;
                     text-align: right;
                 }
+
+                /*&.ac .pip {
+                    background-color: #0e0e0e;
+                    border: 1px solid #252525;
+                    height: 75px;
+                }*/
             }
         }
 
         .text3 {
-            width: 33%;
-
+            width: 36%;
+            top: 20%;
             .itek {
                 > div.it {
-                    padding: 15px;
+                    padding: 25px 40px;
                     .title {
                         font-size: 36px;
                     }
@@ -30,36 +38,89 @@
             }
         }
     }
+
+
+}
+
+
+@media (min-width: 1071px) and (max-width: 1320px){
+
+    .bgImg {
+        .text2 {
+            width: 31%;
+            top: 20%;
+            font-size: 32px;
+            flex-direction: column;
+
+            .itek {
+
+                > div.it {
+                    padding: 25px 30px 25px 0;
+                    text-align: right;
+                }
+
+                /*&.ac .pip {
+                    background-color: #0e0e0e;
+                    border: 1px solid #252525;
+                    height: 75px;
+                }*/
+            }
+        }
+
+        .text3 {
+            width: 38%;
+            top: 20%;
+            .itek {
+                > div.it {
+                    padding: 25px 40px;
+                    .title {
+                        font-size: 36px;
+                    }
+
+                    font-size: 17px;
+                    line-height: 25px;
+                }
+            }
+        }
+    }
 }
 
 
 @media screen and (max-width: 1070px) and (min-width: 951px) {
     .bgImg {
         .text2 {
-            width: 27%;
+            width: 31%;
+            top: 20%;
             font-size: 30px;
             flex-direction: column;
 
             .itek {
 
                 > div.it {
+                    padding: 25px 20px 25px 0;
                     text-align: right;
                 }
+
+                /*&.ac .pip {
+                    background-color: #0e0e0e;
+                    border: 1px solid #252525;
+                    height: 75px;
+                }*/
             }
         }
 
         .text3 {
             width: 40%;
-
+            top:18%;
             .itek {
                 > div.it {
-                    padding: 15px;
+                    padding: 25px 40px;
                     .title {
                         font-size: 30px;
                     }
 
-                    font-size: 19px;
-                    line-height: 27px;
+                    font-size: 18px;
+                    line-height: 23px;
                 }
             }
         }
@@ -77,28 +138,36 @@
             width: 38%;
             font-size: 20px;
             flex-direction: column;
+            top: 20%;
 
             .itek {
-
+                align-items: center;
                 > div.it {
+                    padding: 25px 0px 25px 0;
                     text-align: center;
                 }
+
+                /*&.ac .pip {
+                    background-color: #0e0e0e;
+                    border: 1px solid #252525;
+                    height: 75px;
+                }*/
             }
         }
 
         .text3 {
             width: 40%;
-
+            top: 18%;
             .itek {
 
                 > div.it {
-                    padding: 15px;
+                    padding: 20px 30px;
                     .title {
                         font-size: 30px;
                     }
 
                     font-size: 17px;
-                    line-height: 26px;
+                    line-height: 22px;
                 }
             }
         }
@@ -110,24 +179,31 @@
     .bgImg {
         .text2 {
             width: 93%;
-            font-size: 18px;
+            font-size: 15px;
             flex-direction: row;
 
             .itek {
+                align-items: center;
+                width: 25%;
+                margin-left: 2px;
+                height: 70px;
 
                 > div.it {
                     text-align: center;
+                    //padding: 25px 0px 25px 0;
+
                 }
             }
         }
 
         .text3 {
             width: 93%;
-            bottom: 4%;
-            background-color:  rgba(0, 0, 0, 0.65);
+            bottom: 2%;
+            //background-color:  rgba(0, 0, 0, 0.65);
 
             .itek {
                 > div.it {
+                    padding: 20px 30px;
                     .title {
                         font-size: 30px;
                     }
@@ -151,9 +227,12 @@
             flex-direction: row;
 
             .itek {
-
+                width: 25%;
+                height: 70px;
+                align-items: center;
                 > div.it {
-                    text-align: center;
+
+                    //padding: 25px 0px 25px 0;
                 }
             }
         }
@@ -161,7 +240,7 @@
         .text3 {
             width: 93%;
             bottom: 4%;
-            background-color:  rgba(0, 0, 0, 0.65);
+            //background-color:  rgba(0, 0, 0, 0.65);
 
             .itek {
                 > div.it {

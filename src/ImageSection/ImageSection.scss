@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap');
+
+
+
+
+:root {
+    --main-font: 'Source Sans Pro', sans-serif;
+    --secondary-font: 'Herr Von Muellerhoff', cursive;
+    --body-font: 'Cabin', sans-serif;
+    --main-font-color-dark: #252525;
+    --secondary-font-color: #0b0b0b;
+    --body-font-color: #515151;
+}
+
+html {
+    font-family: var(--body-font);
+    color: var(--body-font-color);
+    scroll-behavior: smooth;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+
+
+
+.hero {
+
+    margin-top: 70px;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .imgi {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        object-fit: cover;
+        width: 100%;
+        filter: brightness(0.85);
+        z-index: 1;
+    }
+
+
+    .sub-headline {
+        position: relative;
+        z-index: 1;
+        font-size: 4.0rem;
+        color: var(--secondary-font-color);
+        font-weight: 500;
+        line-height: .4;
+        letter-spacing: 2px;
+        opacity: 0;
+        animation: fadeUp .5s forwards;
+        animation-delay: 1.1s;
+        margin-bottom: 35px;
+        text-align: center;
+    }
+
+
+
+
+    .first-letter {
+        text-transform: uppercase;
+        font-size: 6.3rem;
+    }
+
+
+
+    .headline {
+        position: relative;
+        z-index: 22;
+        color: black;
+        font-size: 2.0rem;
+        font-family: var(--main-font);
+        text-transform: uppercase;
+        letter-spacing: .5rem;
+        margin-right: -.5rem;
+        animation: scale .5s forwards;
+        animation-delay: .8s;
+        text-align: center;
+        opacity: 0;
+    }
+
+
+    .headline-description {
+        position: relative;
+        z-index: 22;
+    }
+
+    .separator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .single-animation {
+        opacity: 0;
+        animation: fadeDown .5s forwards;
+        animation-delay: 1.7s;
+        text-align: center;
+    }
+
+
+    .line {
+        width: 100%;
+        max-width: 8.4rem;
+        height: .25rem;
+        background-color: black;
+        position: relative;
+        opacity: 0;
+        animation: grow .5s forwards;
+        animation-delay: 1.2s;
+    }
+
+
+    .line-right::before,
+    .line-left::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        border: .6rem solid transparent;
+        opacity: 0;
+        transform: translateY(-50%);
+        animation: grow .5s forwards;
+        animation-delay: 1s;
+    }
+
+    .line-right::before { border-right-color:black; right: 0; }
+    .line-left::before { border-left-color:black; left: 0; }
+
+    .asterisk {
+        font-size: 1.2rem;
+        color: black;
+        margin: 0 1.6rem;
+        opacity: 0;
+        animation: spin33 .5s forwards;
+        animation-delay: 1.2s;
+    }
+
+
+    .headline-description h5 {
+        position: relative;
+        z-index: 22;
+        color: black;
+        font-size: 1.4rem;
+        font-weight: 100;
+        text-transform: uppercase;
+        margin-bottom: 1.2rem;
+        letter-spacing: 3px;
+        margin-left: -3px;
+        margin-top: 1.2rem;
+        text-align: center;
+    }
+
+
+    .btn {
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-right: -2px;
+    }
+
+
+    .cta-btn {
+        font-size: 1.1rem;
+        background-color: white;
+        padding: .9rem 1.8rem;
+        color: black;
+        border-radius: .4rem;
+        transition: background-color .5s;
+    }
+
+    .cta-btn:hover,
+    .cta-btn:focus {
+        color: #fff;
+        background-color: var(--secondary-font-color);
+    }
+
+
+    .global-headline {
+        text-align: center;
+        margin-top: 3.9rem;
+    }
+
+
+}
+
+
+
+
+body.dark-theme {
+
+    .hero {
+
+        .imgi {
+            filter: brightness(0.55);
+        }
+    }
+}
+
+
+
+
+
+
+

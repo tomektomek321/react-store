@@ -62,7 +62,7 @@ export default function PhoneFilter() {
                                 </div>
 
                                 <div className="form-group priceFilter">
-                                    <label htmlFor="price">PHONE PRICE RANGE: 0 - {price} $</label>
+                                    <label className="price" htmlFor="price">PRICE RANGE: 0 - {price} $</label>
 
                                     <input
                                         type="range"

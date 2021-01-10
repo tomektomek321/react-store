@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import ProductColors from './ProductColors';
 import './Product.scss'
 import './Product_RWD.scss'
+import './Product_DetailsInfo.scss'
 import { addToCart } from './_actions/cartAction';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -63,7 +64,7 @@ export default function ProductFunc(props) {
     function removeItem() {}
 
 
-    const detailsData = [
+    /*const detailsData = [
         ['Prozessor', 'Exynos 9820'],
         ['Prozessor-Taktfrequenz', '2.7 GHz + 2.3 GHz + 1.9 GHz Octa-Core'],
         ['Betriebsystem', 'Android 9'],
@@ -85,7 +86,7 @@ export default function ProductFunc(props) {
                 {item[1]}
             </div>
         </div>;
-    });
+    });*/
 
     return (
         <div className="cartProductDiv">
@@ -156,7 +157,7 @@ export default function ProductFunc(props) {
 
         </div>
 
-        <div className={`divProduct_back `} onMouseLeave={showDetails}>
+        {/* <div className={`divProduct_back `} onMouseLeave={showDetails}>
 
             <div className="divProduct_back_content">
 
@@ -166,7 +167,7 @@ export default function ProductFunc(props) {
 
             </div>
 
-        </div>
+        </div> */}
 
 
 
