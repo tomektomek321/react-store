@@ -20,6 +20,8 @@ export const Header1 = () => {
                 </div>
 
                 <div className="nav__toggle" id="nav-toggle">
+                    <div className="amountCart">2</div>
+                    <i className='bx bx-cart'></i>
                     <i className='bx bx-grid-alt'></i>
                 </div>
             </nav>

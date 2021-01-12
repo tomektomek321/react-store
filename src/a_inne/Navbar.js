@@ -3,12 +3,12 @@ import './Navbar.scss';
 import './Navbar_RWD.scss';
 import { Link } from 'react-router-dom'
 //import { UserConsumer } from './userContext'
-import { ProductConsumer } from './context';
+import { ProductConsumer } from '../context';
 import NavbarBigMenu from './Navbar_bigMenu';
 //import NavbarCart from './Navbar_cart';
 //import NavbarLogging from './NavbarLogging';
 import NavbarBgImage from './NavbarBgImage';
-import NavbarCartFunc from './NavbarCartFunc';
+import NavbarCartFunc from '../NavbarCartFunc';
 
 
 export default class Navbar extends Component {

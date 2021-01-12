@@ -191,6 +191,28 @@ img{
     &__toggle{
         font-size: 1.3rem;
         cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+
+        .amountCart {
+            position: absolute;
+            top: -3px;
+            left: -20px;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border-radius: 15px;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        i {
+            padding: 0 12px;
+        }
     }
 }
 

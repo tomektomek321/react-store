@@ -1,8 +1,13 @@
-import Axios from 'axios';
+//import Axios from 'axios';
+import { storeProducts } from './../TodoDB'
 import { CART_ADD_ITEM, CART_REMOVE_ITEM, CART_REMOVE_ALL_ITEMS } from '../_constans/cartConstant';
 
-export const addToCart = (productId, qty) => async (dispatch, getState) => { console.log(123);
-  const { data } = await Axios.get(`http://localhost:5500/api/products/${productId}`);
+export const addToCart = (productId, qty) => async (dispatch, getState) => {
+  //console.log(123);
+  //const { data } = await Axios.get(`http://localhost:5500/api/products/${productId}`);
+
+  let data = storeProducts.filter(item => item.id === productId)[0];
+
   console.log(data);
   dispatch({
     type: CART_ADD_ITEM,

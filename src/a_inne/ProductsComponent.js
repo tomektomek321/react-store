@@ -1,9 +1,9 @@
 
 import React/*, { createContext }*/ from 'react';
-import todosDB from './TodoDB';
+import todosDB from '../TodoDB';
 //import {Link} from 'react-router-dom'
-import {ProductConsumer} from './context';
-import Product from './Product';
+import {ProductConsumer} from '../context';
+import Product from '../Product';
 //import ToDoListContainer from './ToDoListContainer';
 import "./ToDoComponent.scss";
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {ProductConsumer} from './context'
+import {ProductConsumer} from '../context'
 import './Modal.scss'
 
 export default class Modal extends Component {

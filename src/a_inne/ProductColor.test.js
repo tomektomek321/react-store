@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Product from './Product'
+import Product from '../Product'
 import { expect } from 'chai'
 import sinon from 'sinon'
 

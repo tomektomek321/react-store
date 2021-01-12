@@ -171,17 +171,18 @@ body {
 
     .cta-btn {
         font-size: 1.1rem;
-        background-color: white;
+        background-color: black;
+        border: 1px solid black;
         padding: .9rem 1.8rem;
-        color: black;
+        color: white;
         border-radius: .4rem;
         transition: background-color .5s;
     }
 
     .cta-btn:hover,
     .cta-btn:focus {
-        color: #fff;
-        background-color: var(--secondary-font-color);
+        color: black;
+        background-color: transparent;
     }
 
 

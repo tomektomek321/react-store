@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {ProductConsumer} from './context'
+import {ProductConsumer} from '../context'
 import {Link}  from 'react-router-dom'
 import ButtonContainer from './buttonComponent'
 //import styled from 'styled-components';
@@ -17,14 +17,14 @@ export default class Details extends Component {
                         <div>
                             <img src={img} alt="dupa" />
                             <p>price: {price}</p>
-                            
+
                                 <Link to="/">
                                 <ButtonContainer>
                                     Back to products
                                     </ButtonContainer>
                                 </Link>
-                            
-                            
+
+
 
                             <ButtonContainer cart
                                 disabled={inCart ? true : false}
@@ -32,10 +32,10 @@ export default class Details extends Component {
                                     value.addToCart(id);
                                     value.openModal(id);
                                  }} >
-                                
+
                                 {inCart ? (
                                     <span disabled>
-                                        
+
                                         In Cart
                                     </span>
                                 ) : (

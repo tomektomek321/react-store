@@ -72,7 +72,52 @@
 
 
 
+@media screen and (max-height: 700px) {
 
+    .cartProductDiv {
+        height: 400px;
+
+
+
+        .detailsInfo {
+            bottom: 26% !important;
+
+            .colorsDiv {
+                font-size: 18px !important;
+
+                .items {
+
+                    .it {
+                        .colorek {
+                            height: 12px !important;
+                            width: 12px !important;
+                        }
+
+
+                    }
+                }
+            }
+
+            .info {
+                margin-top: 2px !important;
+
+                .name {
+                    margin-bottom: 3px !important;
+                }
+
+                .info--info {
+                    margin-bottom: 2px !important;
+                }
+
+            }
+        }
+
+
+
+    }
+
+
+}
 
 
 

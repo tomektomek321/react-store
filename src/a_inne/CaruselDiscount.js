@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './CaruselDiscount.scss'
 import './CaruselDiscount_RWD.scss'
-import {ProductConsumer} from './context';
+import {ProductConsumer} from '../context';
 import CaruselDiscountItem from './CaruselDiscountItem'
 
 export default class CaruselDiscount extends Component {

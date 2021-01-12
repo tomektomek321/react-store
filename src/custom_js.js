@@ -23,6 +23,11 @@ function loadFun() {
     showMenu('nav-toggle','nav-menu')
 
 
+    let x2 = document.querySelectorAll('.nav__logo')[0];
+    console.log(x2);
+    x2.innerHTML += window.innerWidth;
+    x2.innerHTML += " ";
+    x2.innerHTML += window.innerHeight
 
 
     const navLink = document.querySelectorAll('.nav__link')

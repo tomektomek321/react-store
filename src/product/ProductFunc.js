@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 //import { Link } from 'react-router-dom';
-import ProductColors from './ProductColors';
+
 import './Product.scss'
 import './Product_RWD.scss'
 import './Product_DetailsInfo.scss'
-import { addToCart } from './_actions/cartAction';
+import './AddBtn.scss'
+import { addToCart } from '../_actions/cartAction';
 import { useSelector, useDispatch } from 'react-redux';
+import { DetailsInfo } from './DetailsInfo';
 
 export default function ProductFunc(props) {
     const {cartItems} = useSelector((state) => state.cart);
@@ -60,7 +62,7 @@ export default function ProductFunc(props) {
 
         dispatch(addToCart(props.product.id));
     }
-    function showDetails() {}
+
     function removeItem() {}
 
 
@@ -132,26 +134,7 @@ export default function ProductFunc(props) {
 
                 </div>
 
-                <div className="detailsInfo">
-
-                    <ProductColors />
-
-                    <div className="displayInfo info">
-                        <div className="name">Display</div>
-                        <div className="info">15.5cm / 6.1 Zoll</div>
-                    </div>
-                    <div className="procesorInfo info">
-                        <div className="name">Procesor</div>
-                        <div className="info">Exyson 850</div>
-                    </div>
-                    <div className="systemInfo info">
-                        <div className="name">System</div>
-                        <div className="info">Android 10.0, One UI Core 2.1</div>
-                    </div>
-                    <div className="showDetailsBtn info" onClick={showDetails}>
-                        <div className="text">SZCZEGOLY</div>
-                    </div>
-                </div>
+                <DetailsInfo />
 
             </div>
 

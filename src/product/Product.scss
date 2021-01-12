@@ -1,0 +1,306 @@
+
+$addedColor: #b18d8d;
+
+
+div { box-sizing: border-box; }
+
+
+
+
+
+
+
+.cartProductDiv {
+    position: relative;
+    margin: 5px;
+    max-width: 515px;
+    width: 100%;
+    height: 550px;
+    box-sizing: border-box;
+    padding: 2px;
+    overflow: hidden;
+    transition: 1s;
+    perspective: 800px;
+    transform-style: preserve-3d;
+    opacity: 0;
+
+
+    &.slideLeft {
+        animation: slideLeft 1s forwards;
+    }
+
+    .divProduct_front {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ececec;
+        border: 1px solid #f1f1f1;
+        overflow: hidden;
+        transition: 1s;
+        z-index: 2;
+        border-radius: 20px;
+
+        .divProduct {
+
+            width: 100%;
+            height: 100%;
+
+            .bgAddedColor {
+                position: absolute;
+                top: -50%;
+                width: 100%;
+                height: 100%;
+                background-color: #c5c5c5;
+                transform: skewY(345deg);
+                transition: 0.5s;
+
+                &.y { background-color: #c5c5c5;}
+                &.x { background-color: $addedColor}
+            }
+
+            .head {
+                height: 50px;
+                width: 100%;
+                top: -20%;
+                padding-top: 13px;
+                text-align: center;
+                font-size: 27px;
+                letter-spacing: 1px;
+                color: wheat;
+                position: absolute;
+                transition: 0.5s;
+                z-index: 6;
+
+            }
+
+            .productImg {
+                height: 100%;
+                padding-top: 10%;
+                position: relative;
+                overflow: hidden;
+                transition: 1s;
+                z-index: 1;
+
+                img {
+                    height: 80%;
+                    width: 100%;
+                    object-fit: contain;
+                    transition: 0.5s;
+
+                }
+
+            }
+
+            .priceDiv {
+                position: absolute;
+                width: 50%;
+                bottom: -68%;
+                left: 5%;
+                transition: 0.5s;
+                transition-delay: 0.1s;
+
+                .btnPrice {
+                    margin-bottom: 5px;
+                    width: 100%;
+                    border: 0px solid red;
+                    color: #404040;
+                    padding: 15px;
+                    border-radius: 10px;
+                    font-size: 40px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+
+            .removeBtn {
+                position: absolute;
+                bottom: -30%;
+                right: 0;
+                width: 65px;
+                padding: 9px 16px;
+                transition: .7s;
+                transition-delay: 0.5s;
+                &.added { bottom: 1%; }
+            }
+
+            .priceAdd {
+                position: absolute;
+                height: 50px;
+                width: 50%;
+                bottom: -30%;
+                right: 0;
+                display: grid;
+                grid-template-columns: 1fr;
+                transition: 0.5s;
+                transition-delay: 0.5s;
+                z-index: 3;
+
+                .price {
+                    text-align: center;
+                    font-size: 29px;
+                    color: wheat;
+                    margin-bottom: 10px;
+                }
+            }
+
+            &.hov {
+
+                box-shadow: 0px 0px 7px 8px #47464c;
+
+                .priceDiv { bottom: 18% }
+
+                .bgAddedColor {
+                    transform: skewY(235deg);
+                    top: -40%;
+                    left: 0%;
+                }
+
+                .head {
+                    top: 0%;
+                    color: black;
+                }
+
+                .productImg  {
+                    padding-top: 20%;
+                    height: 70%;
+                    img { height: 80%; width: 55%; }
+                }
+
+                .detailsInfo .colorsDiv {
+                    color: black;
+                }
+
+                .detailsInfo .info .name {
+                    color: black;
+                }
+
+                .detailsInfo .info .info {
+                    color: #414141;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+
+body.dark-theme {
+
+    .cartProductDiv {
+
+
+        .divProduct_front {
+            background-color: rgb(36, 33, 33);
+            border: 1px solid black;
+
+            .form-control {
+                background-color: black;
+                color: white;
+            }
+        }
+
+
+        .bgAddedColor { background-color: #414141 !important; }
+
+        .head {
+            color: white;
+        }
+
+        .detailsInfo .colorsDiv {
+            color: white !important;
+        }
+
+        .detailsInfo .info .name {
+            color: white !important;
+        }
+
+        .detailsInfo .info .info {
+            color: white !important;
+        }
+
+
+        .btnCart {
+
+            .name {
+                background-color: #55526d;
+                border-radius: 5px 0 0 5px;
+            }
+
+            .image {
+                background-color: #493d96;
+                border-radius: 0px 5px 5px 0px;
+            }
+        }
+
+        .priceDiv {
+
+            .btnPrice {
+                color: rgb(210, 204, 204);
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1660px !important;
+    }
+}
+
+
+@media screen and (max-width: 700px){
+
+    .head {
+        font-size: 20px !important;
+    }
+
+
+    .priceDiv {
+
+        .btnPrice {
+            font-size: 25px !important;
+        }
+    }
+
+
+    .detailsInfo .info .text {
+        padding: 3px;
+        font-size: 12px;
+    }
+
+
+    .btnCart {
+        font-size: 16px !important;
+
+
+        .name {
+            width: 70%;
+            padding: 9px 0 9px 0 !important;
+            background-color: #949494;
+            color: black !important;
+            &.added {
+                background-color: #542b2b;
+            }
+
+        }
+
+        .image {
+            width: 30%;
+            background-color: #3b336d;
+            padding: 7px 0 0 0 !important;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+    }
+}
+

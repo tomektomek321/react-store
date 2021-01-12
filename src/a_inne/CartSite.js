@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
-import { addToCart } from './_actions/cartAction';
+import { addToCart } from '../_actions/cartAction';
 
 export default function CartSite(props) {
     const id = props.match.params.id;

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { storeProducts } from './TodoDB'
 //import { listProducts } from './_actions/productActions';
 import "./ToDoComponent.scss";
-import ProductFunc from './ProductFunc';
+import ProductFunc from './product/ProductFunc';
 
 
 export default function ProductComponentHooks() {

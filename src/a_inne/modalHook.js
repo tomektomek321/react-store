@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { detailsProduct } from './_actions/productActions';
+import { detailsProduct } from '../_actions/productActions';
 import './ModalHook.scss'
 
 export default function ModalHook(props) {

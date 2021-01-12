@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import './FullCart.scss'
-import { removeFromCart } from './_actions/cartAction';
+import { removeFromCart } from '../_actions/cartAction';
 
 export default function FullCart() {
     const cart = useSelector(state => state.cart);

@@ -13,27 +13,27 @@ export default class ToDoListContainer extends Component {
     state = {
         toDoList: [
             {
-                task: 'Learn slowa', 
-                done: false, 
-                priority: 0, 
+                task: 'Learn slowa',
+                done: false,
+                priority: 0,
                 req: 20,
                 maded: 0
             },
             {
-                task: 'Learn gramatic', 
-                done: false, 
-                priority: 0, 
+                task: 'Learn gramatic',
+                done: false,
+                priority: 0,
                 req: 10,
                 maded: 0
             },
             {
-                task: 'sluchanie', 
-                done: false, 
-                priority: 0, 
-                req: 10, 
+                task: 'sluchanie',
+                done: false,
+                priority: 0,
+                req: 10,
                 maded: 0,
             },
-            
+
         ],
         draft: '',
         draftEdit: '',
@@ -51,20 +51,20 @@ export default class ToDoListContainer extends Component {
             const element = this.state.toDoList[i];
 
             if(element.task.startsWith('Learn') || element.task.startsWith('sluchanie')) {
-                
+
                 let req = element.req;
                 let maded = element.maded;
 
                 x += (maded / req) * 100;
-                
+
                 count++;
 
-            } 
+            }
 
         }
 
         completed = x / count;
-        
+
         this.setState({
             allDone: completed
         })
@@ -73,7 +73,7 @@ export default class ToDoListContainer extends Component {
 
 
     makeDone = (id) => {
-        
+
         let ab = this.state.toDoList.findIndex((item, index) => index === id);
 
         var x = this.state.toDoList;
@@ -84,13 +84,13 @@ export default class ToDoListContainer extends Component {
     }
 
     delTask = (id) => {
-        
+
         let ab = this.state.toDoList.findIndex((item, index) => index === id);
-        
+
         var x = this.state.toDoList;
-        
+
         x.splice(ab, 1);
-        
+
         this.setState({ toDoList: x }, this.countCompleted);
 
     }
@@ -99,7 +99,7 @@ export default class ToDoListContainer extends Component {
         const {toDoList, draft} = this.state;
         toDoList.push({task: draft, done: false});
         this.setState({
-            toDoList: toDoList, 
+            toDoList: toDoList,
             draft: '',
         })
     }
@@ -113,11 +113,11 @@ export default class ToDoListContainer extends Component {
     }
 
     confirmEdit = (id) => {
-        
+
         let ab = this.state.toDoList.findIndex((item, index) => index === id);
-        
+
         var x = this.state.toDoList;
-        
+
         x[ab].task = this.state.draftEdit;
 
         this.setState( {
@@ -127,32 +127,32 @@ export default class ToDoListContainer extends Component {
         });
 
     }
-    
+
     updateDraftEdit = (event) => {
         this.setState({ draftEdit: event.target.value });
     }
 
 
     /*
-        return <ToDoItemek task={item.task} done={item.done} priority={item.priority} myKey={index} editTask={this.editTask} 
-            editId={this.state.edit} draftEdit={this.state.draftEdit} confirmEdit={this.confirmEdit} 
+        return <ToDoItemek task={item.task} done={item.done} priority={item.priority} myKey={index} editTask={this.editTask}
+            editId={this.state.edit} draftEdit={this.state.draftEdit} confirmEdit={this.confirmEdit}
             key={index} makeDone={this.makeDone} delTask={this.delTask} updateDraftEdit={this.updateDraftEdit}/>
 
     */
 
     runUpdate = (e) => {
-            
+
         const value = e.target.value;
 
         const index = parseInt(e.target.name.substr(8));
 
         var x = this.state.toDoList;
-        
+
         x[index].maded = value;
-        
+
         this.setState({
             toDoList: x
-        }, 
+        },
             this.countCompleted
         );
 
@@ -166,25 +166,25 @@ export default class ToDoListContainer extends Component {
 
         this.setState({
             toDoList: x
-        }, 
+        },
             this.countCompleted
         );
 
     }
 
     languageUpdate = (e) => {
-            
+
         const value = e.target.value;
-        
+
         const index = parseInt(e.target.name.substr(8));
-        
+
         var x = this.state.toDoList;
-        
+
         x[index].maded = value;
 
         this.setState({
             toDoList: x
-        }, 
+        },
             this.countCompleted
         );
 
@@ -195,7 +195,7 @@ export default class ToDoListContainer extends Component {
     getPriority(prio) {
 
         let btn, alertColor;
-        
+
         if(prio === 0) {
             btn =  '';
             alertColor = '';
@@ -216,8 +216,8 @@ export default class ToDoListContainer extends Component {
 
         //let x = new Date();
 
-        
-        
+
+
 
         const list = this.state.toDoList.map((item, index) => {
             //console.log(item);
@@ -234,12 +234,12 @@ export default class ToDoListContainer extends Component {
                     <td colSpan="4">
                         {item.task}
                     </td>
-                  
+
                     <td>
                         <button onClick={() => this.delTask(1)} type="button" className="btn btn-info"> DELETE TASK </button>
                     </td>
-                    
-                    
+
+
                 </tr>
 
         )
@@ -247,9 +247,9 @@ export default class ToDoListContainer extends Component {
 
             }
 
-          
 
-            
+
+
         })
 
         return (
@@ -262,7 +262,7 @@ export default class ToDoListContainer extends Component {
                         <th>zrobione</th>
                         <th>PRIORITY</th>
                         <th>usun</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
@@ -277,7 +277,7 @@ export default class ToDoListContainer extends Component {
 
                                 <label htmlFor="inputPassword2" className="sr-only">Password</label>
                                 <input type="text"  onChange={this.updateDraft} value={this.state.draft} className="form-control" id="inputPassword2" placeholder="dodaj zadanie" />
-                                
+
                             </div>
                             </div>
                         </th>
@@ -298,8 +298,8 @@ export default class ToDoListContainer extends Component {
 
 /*
 
-<ToDoItemek task={item.task} done={item.done} priority={item.priority} myKey={index} editTask={this.editTask} 
-                        editId={this.state.edit} draftEdit={this.state.draftEdit} confirmEdit={this.confirmEdit} 
+<ToDoItemek task={item.task} done={item.done} priority={item.priority} myKey={index} editTask={this.editTask}
+                        editId={this.state.edit} draftEdit={this.state.draftEdit} confirmEdit={this.confirmEdit}
                         key={index} makeDone={this.makeDone} delTask={this.delTask} updateDraftEdit={this.updateDraftEdit}/>
 
 

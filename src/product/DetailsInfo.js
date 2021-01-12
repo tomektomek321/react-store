@@ -1,0 +1,32 @@
+import React from 'react'
+import ProductColors from './ProductColors';
+import './DetailsInfo.scss'
+
+export const DetailsInfo = () => {
+
+    function showDetails() {}
+
+
+    return (
+        <div className="detailsInfo">
+
+            <ProductColors />
+
+            <div className="displayInfo info">
+                <div className="name">Display</div>
+                <div className="info--info">15.5cm / 6.1 Zoll</div>
+            </div>
+            <div className="procesorInfo info">
+                <div className="name">Procesor</div>
+                <div className="info--info">Exyson 850</div>
+            </div>
+            <div className="systemInfo info">
+                <div className="name">System</div>
+                <div className="info--info">Android 10.0, One UI Core 2.1</div>
+            </div>
+            <div className="showDetailsBtn info" onClick={showDetails}>
+                <div className="text">SZCZEGOLY</div>
+            </div>
+        </div>
+    )
+}
