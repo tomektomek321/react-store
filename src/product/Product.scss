@@ -152,8 +152,8 @@ div { box-sizing: border-box; }
                 .priceDiv { bottom: 18% }
 
                 .bgAddedColor {
-                    transform: skewY(235deg);
-                    top: -40%;
+                    transform: skewY(231deg);
+                    top: -31%;
                     left: 0%;
                 }
 
@@ -254,7 +254,7 @@ body.dark-theme {
 }
 
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) and (min-height: 701px){
 
     .head {
         font-size: 20px !important;

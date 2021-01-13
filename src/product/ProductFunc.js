@@ -5,7 +5,7 @@ import './Product.scss'
 import './Product_RWD.scss'
 import './Product_DetailsInfo.scss'
 import './AddBtn.scss'
-import { addToCart } from '../_actions/cartAction';
+import { addToCart, removeFromCart } from '../_actions/cartAction';
 import { useSelector, useDispatch } from 'react-redux';
 import { DetailsInfo } from './DetailsInfo';
 
@@ -13,7 +13,7 @@ export default function ProductFunc(props) {
     const {cartItems} = useSelector((state) => state.cart);
     //console.log(cartItems);
     //console.log(props);
-    const x = cartItems.filter(a => a.product === props.product.id);
+    const x = cartItems.filter(a => a.id === props.product.id);
     //console.log(x);
     const [mainDivHov, setMinDivHover] = useState((x.length > 0) ? "divProduct hov" : "divProduct");
 
@@ -21,7 +21,7 @@ export default function ProductFunc(props) {
     const dispatch = useDispatch();
     function productHover(bool) {
         if(bool === null) {
-            if(!cartItems.find(a => a.product === props.product.id)) {
+            if(!cartItems.find(a => a.id === props.product.id)) {
                 if(mainDivHov === "divProduct") {
                     setMinDivHover("divProduct hov")
                 } else {
@@ -32,7 +32,7 @@ export default function ProductFunc(props) {
             return;
         }
 
-        if(cartItems.find(a => a.product === props.product.id)) {
+        if(cartItems.find(a => a.id === props.product.id)) {
             setMinDivHover("divProduct hov")
         }else if(bool) {
             setMinDivHover("divProduct hov")
@@ -51,7 +51,7 @@ export default function ProductFunc(props) {
      //const detailsShowed1 = (detailsShowed) ? "detailsShowed" : "" ;
     //console.log(props);
     function isAdded() {
-        if(cartItems.find(a => a.product === props.product.id)) {
+        if(cartItems.find(a => a.id === props.product.id)) {
             return true;
         } else {
             return false;
@@ -59,11 +59,13 @@ export default function ProductFunc(props) {
     }
     //console.log(props);
     function addToCart_() {
-
+        console.log(props.product);
         dispatch(addToCart(props.product.id));
     }
 
-    function removeItem() {}
+    function removeItem(id) {
+        dispatch(removeFromCart(id));
+    }
 
 
     /*const detailsData = [

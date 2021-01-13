@@ -22,7 +22,7 @@ export const DetailsInfo = () => {
             </div>
             <div className="systemInfo info">
                 <div className="name">System</div>
-                <div className="info--info">Android 10.0, One UI Core 2.1</div>
+                <div className="info--info">Android 10, One UI Core 2.1</div>
             </div>
             <div className="showDetailsBtn info" onClick={showDetails}>
                 <div className="text">SZCZEGOLY</div>
