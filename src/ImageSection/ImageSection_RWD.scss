@@ -4,6 +4,50 @@
 
     .hero {
         margin-top: -10px;
+
+        .sub-headline {
+
+            .first-letter {
+                font-size: 14vw;
+            }
+            font-size: 11vw;
+        }
+
+        .headline {
+            font-size: 5vw;
+        }
+
+        .separator {
+            .asterisk {
+                font-size: 3vw;
+            }
+
+            .line-left::before { border: 0.9vw solid transparent; border-left-color: black; }
+            .line-right::before { border: 0.9vw solid transparent;  border-right-color: black;}
+
+
+
+            .line {
+                max-width: 26vw;
+                height: .5vw;
+            }
+        }
+
+        .headline-description {
+            .single-animation {
+                h5 {
+                    font-size: 4.7vw;
+                }
+
+                a {
+                    font-size: 2.7vw;
+                    padding: 2.5vw 5vw;
+                }
+
+            }
+        }
+
+
     }
 }
 

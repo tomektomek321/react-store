@@ -15,7 +15,7 @@ export default function ProductFunc(props) {
     //console.log(props);
     const x = cartItems.filter(a => a.id === props.product.id);
     //console.log(x);
-    const [mainDivHov, setMinDivHover] = useState((x.length > 0) ? "divProduct hov" : "divProduct");
+    const [mainDivHov, setMinDivHover] = useState((x.length > 0) ? "divProduct hov" : "divProduct hov");
 
 
     const dispatch = useDispatch();

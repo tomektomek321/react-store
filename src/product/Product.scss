@@ -254,6 +254,54 @@ body.dark-theme {
 }
 
 
+@media (max-width: 550px) {
+
+    .divProduct {
+
+        .head {
+            font-size: 5.5vw !important;
+        }
+
+        .priceDiv {
+
+            .btnPrice {
+
+                font-size: 7.0vw !important;
+            }
+        }
+
+
+        .btnCart {
+            .name {
+                font-size: 4.0vw !important;
+
+
+            }
+
+            .image {
+
+            }
+
+
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+/*
 @media screen and (max-width: 700px) and (min-height: 701px){
 
     .head {
@@ -303,4 +351,4 @@ body.dark-theme {
 
     }
 }
-
+*/
