@@ -1,4 +1,5 @@
 import Axios from "axios";
+import { storeProducts } from '../TodoDB'
 import {
 
     PRODUCT_LIST_FAIL,
@@ -10,16 +11,19 @@ import {
 
 } from "../_constans/ProductConstans"
 
-export const listProducts = () => async(dispatch) => {
+export const listProducts = (filters = null) => async(dispatch) => {
 
     dispatch({
         type: PRODUCT_LIST_REQUEST
     });
 
+    console.log(filters);
+
     try {
-        const res = await Axios.get('/api/products');
+        //const res = await Axios.get('/api/products');
+        const res = storeProducts;
         console.log(res);
-        dispatch({type: PRODUCT_LIST_SUCCESS, payload: res.data});
+        dispatch({type: PRODUCT_LIST_SUCCESS, payload: res});
 
     } catch (error) {
         dispatch({type: PRODUCT_LIST_FAIL, payload: error.message});

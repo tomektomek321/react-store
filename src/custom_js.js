@@ -45,11 +45,13 @@ function loadFun() {
 
     const themeButton = document.getElementById('theme-button')
     const darkTheme = 'dark-theme'
+    const brightTheme = 'bright-theme'
     const iconTheme = 'bx-toggle-right'
 
     themeButton.addEventListener('click', () => {
 
         document.body.classList.toggle(darkTheme)
+        document.body.classList.toggle(brightTheme)
         themeButton.classList.toggle(iconTheme)
 
     })

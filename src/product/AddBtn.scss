@@ -1,14 +1,22 @@
 
-$addedColor: #b18d8d;
+$addedColor: #cc9d9d;
+$addedColorDark: #565555;
 
 .divProduct{
 
     .btnCart {
         position: absolute;
         bottom: -66%;
-        left: 7%;
+        left: 5%;
         transition: 0.5s;
         transition-delay: 0.3s;
+        width: 50%;
+        cursor: pointer;
+        padding: 0px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        display: flex;
 
         &.added {
             bottom: 0%;
@@ -18,39 +26,24 @@ $addedColor: #b18d8d;
             overflow: hidden;
         }
 
-        width: 50%;
-        border: 0px solid rgb(218, 218, 218);
-        cursor: pointer;
-        color: white;
-        padding: 0px;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        display: flex;
 
         &:hover {
-            .name {  background-color: #3a3946 !important; }
-            .image { background-color: #191438 !important;}
         }
 
         .name {
             width: 70%;
             padding: 13px 0 15px 0;
-            background-color: #949494;
 
             &.added {
-                background-color: $addedColor;
             }
 
         }
 
         .image {
             width: 30%;
-            background-color: #3b336d;
             padding: 9px 0 0 0;
 
             &.added {
-                background-color: $addedColor;
             }
         }
 
@@ -71,8 +64,153 @@ $addedColor: #b18d8d;
 }
 
 
+@media screen and (max-width: 520px) {
+
+    .divProduct {
+
+        .btnCart {
+            font-size: 4.5vw;
+
+            .name {
+                color: black !important;
+                padding: 2.4vw 0 2.4vw 0;
+            }
+
+            .image {
+                padding: 1.6vw 0 0 0 !important;
+
+                img {
+                    width: 6.3vw;
+                    height: 6.3vw;
+                }
+            }
+
+        }
+
+    }
+
+}
 
 
 
 
 
+body.bright-theme {
+
+    .divProduct {
+
+        .btnCart {
+
+            border: 0px solid rgb(218, 218, 218);
+            color: white;
+
+
+            /*&:hover {
+                .name {  background-color: #3a3946 !important; }
+                .image { background-color: #191438 !important; }
+            }*/
+
+            .name {
+                background-color: #949494;
+
+            }
+
+            .image {
+                background-color: #3b336d;
+
+            }
+
+        }
+
+        &.hov {
+            .btnCart {
+
+
+            }
+
+
+        }
+
+        &.cl {
+            .btnCart {
+
+                .name {
+                    background-color: $addedColor !important;
+                }
+                .image {
+                    background-color: $addedColor !important;
+
+                }
+
+            }
+
+
+
+        }
+
+    }
+
+
+}
+
+
+body.dark-theme {
+
+    .divProduct{
+
+        .btnCart {
+            border: 0px solid rgb(0, 0, 0);
+            color: white;
+
+            /*&:hover {
+                .name {  background-color: #3a3946 !important; }
+                .image { background-color: #191438 !important; }
+            }*/
+
+            .name {
+                background-color: #3a3a3a;
+
+            }
+
+            .image {
+                background-color: #413c60;
+            }
+
+        }
+
+        &.hov {
+            .btnCart {
+
+                .name {
+                    background-color: #646060 !important;
+                }
+                .image {
+                    background-color: #565555 !important;
+
+                }
+            }
+
+
+        }
+
+        &.cl {
+            .btnCart {
+
+                .name {
+                    background-color: $addedColorDark !important;
+                }
+                .image {
+                    background-color: $addedColorDark !important;
+
+                }
+
+            }
+
+
+
+        }
+
+    }
+
+
+}

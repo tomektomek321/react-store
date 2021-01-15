@@ -1,0 +1,113 @@
+
+$addedColorBright: #cc9d9d;
+$addedColorNight: #565555;
+
+
+body {
+
+    .cartProductDiv {
+
+        .divProduct {
+
+            width: 100%;
+            height: 100%;
+
+            .bgAddedColor {
+                position: absolute;
+                top: -50%;
+                width: 100%;
+                height: 100%;
+                transform: skewY(345deg);
+                transition: 0.5s;
+            }
+
+
+            &.hov, &.cl {
+
+                .priceDiv { bottom: 18% ; left: 4%; }
+
+                .bgAddedColor {
+                    transform: skewY(231deg);
+                    top: -38%;
+                    left: 0%;
+                }
+
+            }
+
+        }
+
+
+    }
+}
+
+
+
+
+body.bright-theme {
+
+    .cartProductDiv {
+
+        .divProduct {
+
+            .bgAddedColor {
+                background-color: #c5c5c5;
+
+                &.y { background-color: #c5c5c5; }
+                &.x { background-color: $addedColorBright; }
+            }
+
+            &.hov {
+
+                .bgAddedColor {
+                    background-color: #bfbdbd;
+                }
+
+            }
+
+            &.cl {
+
+                .bgAddedColor {
+                    background-color: $addedColorBright
+                }
+
+            }
+
+        }
+    }
+}
+
+
+body.dark-theme {
+
+    .cartProductDiv {
+
+        .divProduct {
+
+            .bgAddedColor {
+                background-color: #c5c5c5;
+
+            }
+
+            .bgAddedColor { background-color: #414141; }
+
+            &.hov {
+
+                .bgAddedColor {
+                    background-color: #5a5959;
+                }
+
+            }
+
+            &.cl {
+
+                .bgAddedColor {
+                    background-color: $addedColorNight;
+                }
+
+            }
+
+        }
+
+    }
+
+}

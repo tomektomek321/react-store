@@ -1,34 +1,33 @@
 
-import React, { useEffect, useState } from 'react'
-//import Product from './Product'
-//import { useDispatch, useSelector } from 'react-redux'
-import { storeProducts } from './TodoDB'
-//import { listProducts } from './_actions/productActions';
+import React from 'react'
+import { useSelector } from 'react-redux'
 import "./ToDoComponent.scss";
 import ProductFunc from './product/ProductFunc';
 
 
 export default function ProductComponentHooks() {
 
-    //const dispatch = useDispatch();
 
-    //const productList = useSelector((state) => state.productList);
+    const productList = useSelector((state) => state.productList);
 
-    //const { loading, error, products} = productList;
-
-    const [products, setProducts] = useState([]);
+    const filters = useSelector((state) => state.filters);
 
 
-    /*const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false);*/
+    let tempProd = [...productList];
+    if(filters.company !== 'all') {
+        tempProd = tempProd.filter(item => {return item.company === filters.company});
+    }
 
+    if (filters.guaranty === true) {
+        tempProd = tempProd.filter(room => room.guaranty === true);
+    }
 
-    useEffect(() => {
-        setProducts(storeProducts);
-        //dispatch(listProducts());
-    // eslint-disable-next-line
-    }, []);
+    if (filters.guaranty === false) {
+        tempProd = tempProd.filter(room => room.guaranty === false);
+    }
+
+    tempProd = tempProd.filter(room => room.price <= filters.price);
+
 
 
     /*useEffect(() => {
@@ -57,29 +56,10 @@ export default function ProductComponentHooks() {
 
     return (
         <div className="container productsContainer">
-            {products.map((product, index) => {
+            {tempProd.map((product, index) => {
                 return <ProductFunc key={index} product={product} />
             })}
         </div>
 
-
-        // <div>
-        //     {loading ? (
-
-        //             <div>loading..</div>
-
-        //         ) : error ? (
-        //             {error}
-
-        //         ) : (
-
-        //             products.map((product, index) => {
-        //                 return <Product key={index} product={product} />
-        //             })
-
-        //         )
-        //     }
-
-        // </div>
     )
 }

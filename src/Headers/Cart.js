@@ -52,7 +52,7 @@ export default function Cart(props) {
     }
 
     const detailsDataHTML = cartItems && cartItems.map((item, index) => {
-        console.log(item);
+
         return <div className="cart_item" key={index}>
             <div className="cart_item--image">
                 <img alt="nic" src={item['img']} />

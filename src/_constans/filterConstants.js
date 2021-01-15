@@ -1,0 +1,2 @@
+export const RESET_FILTERS = 'RESET_FILTERS';
+export const CHANGE_FILTERS = 'CHANGE_FILTERS';

@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-//import { Link } from 'react-router-dom';
-
 import './Product.scss'
 import './Product_RWD.scss'
 import './Product_DetailsInfo.scss'
+import './BgMoveColor.scss'
 import './AddBtn.scss'
 import { addToCart, removeFromCart } from '../_actions/cartAction';
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,21 +10,19 @@ import { DetailsInfo } from './DetailsInfo';
 
 export default function ProductFunc(props) {
     const {cartItems} = useSelector((state) => state.cart);
-    //console.log(cartItems);
-    //console.log(props);
     const x = cartItems.filter(a => a.id === props.product.id);
-    //console.log(x);
-    const [mainDivHov, setMinDivHover] = useState((x.length > 0) ? "divProduct hov" : "divProduct hov");
+
+    const [mainDivHov, setMinDivHover] = useState((x.length > 0) ? "cl" : "");
 
 
     const dispatch = useDispatch();
     function productHover(bool) {
         if(bool === null) {
             if(!cartItems.find(a => a.id === props.product.id)) {
-                if(mainDivHov === "divProduct") {
-                    setMinDivHover("divProduct hov")
+                if(mainDivHov === "cl") {
+                    setMinDivHover("")
                 } else {
-                    setMinDivHover("divProduct")
+                    setMinDivHover("hov")
                 }
             }
 
@@ -33,11 +30,11 @@ export default function ProductFunc(props) {
         }
 
         if(cartItems.find(a => a.id === props.product.id)) {
-            setMinDivHover("divProduct hov")
+            setMinDivHover("cl")
         }else if(bool) {
-            setMinDivHover("divProduct hov")
+            setMinDivHover("hov")
         } else {
-            setMinDivHover("divProduct")
+            setMinDivHover("")
         }
 
     }
@@ -48,8 +45,6 @@ export default function ProductFunc(props) {
 
     const imgClass = (true) ? "productImg" : "productImg hidden" ;
 
-     //const detailsShowed1 = (detailsShowed) ? "detailsShowed" : "" ;
-    //console.log(props);
     function isAdded() {
         if(cartItems.find(a => a.id === props.product.id)) {
             return true;
@@ -57,9 +52,9 @@ export default function ProductFunc(props) {
             return false;
         }
     }
-    //console.log(props);
+
     function addToCart_() {
-        console.log(props.product);
+
         dispatch(addToCart(props.product.id));
     }
 
@@ -67,42 +62,16 @@ export default function ProductFunc(props) {
         dispatch(removeFromCart(id));
     }
 
-
-    /*const detailsData = [
-        ['Prozessor', 'Exynos 9820'],
-        ['Prozessor-Taktfrequenz', '2.7 GHz + 2.3 GHz + 1.9 GHz Octa-Core'],
-        ['Betriebsystem', 'Android 9'],
-        ['Speicherkapazität', '128GB'],
-        ['Steckplatz für Speicherkarten', 'Ja'],
-        ['Speicherkartenformat', 'Micro-SD'],
-        ['Arbeitsspeicher-Größe', '8GB'],
-        ['Auflösung (HxB)', '3.040 x 1.440 Pixel'],
-        ['Front-Kamera Auflösung', '10 Megapixel'],
-        ['Abmessungen (B/H/T) / Gewicht', '70.4 mm x 149.9 mm x 7.8 mm / 157 g'],
-    ];
-
-    const detailsDataHTML = detailsData.map((item, index) => {
-        return <div className="details_item" key={index}>
-            <div className="details_item--name">
-                {item[0]}
-            </div>
-            <div className="details_item--value">
-                {item[1]}
-            </div>
-        </div>;
-    });*/
-
     return (
         <div className="cartProductDiv">
-            {/* ${detailsShowed1} */}
+
         <div  className={`divProduct_front `}>
-            {/* make tap and not redirect, just show  */}
-            <div className={` ${mainDivHov} `}  onMouseEnter={() => productHover(true)} onMouseLeave={() => productHover(false)}>
+
+            <div className={`divProduct ${mainDivHov} `}  onMouseEnter={() => productHover(true)} onMouseLeave={() => productHover(false)}>
 
                 <div className="head">{title}</div>
                 <div className={`bgAddedColor ${isAdded(id) ? 'x' : 'y'}`}></div>
 
-                {/* <div className={imgClass} onClick={() => openModal(id) }> */}
                 <div className={imgClass}  onClick={()=> productHover(null)}>
                         <img src={img} alt="product" />
                 </div>
@@ -131,7 +100,7 @@ export default function ProductFunc(props) {
                 <div className="priceDiv">
 
                     <div className="btnPrice">
-                            Price: {price} $
+                            {price.toFixed(2)} $
                     </div>
 
                 </div>
@@ -141,20 +110,6 @@ export default function ProductFunc(props) {
             </div>
 
         </div>
-
-        {/* <div className={`divProduct_back `} onMouseLeave={showDetails}>
-
-            <div className="divProduct_back_content">
-
-                <div className="details_header">Technische Merkmale</div>
-
-                {detailsDataHTML}
-
-            </div>
-
-        </div> */}
-
-
 
     </div>
     )

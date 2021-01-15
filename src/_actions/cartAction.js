@@ -1,10 +1,9 @@
-//import Axios from 'axios';
+
 import { storeProducts } from './../TodoDB'
 import { CART_ADD_ITEM, CART_REMOVE_ITEM, CART_REMOVE_ALL_ITEMS } from '../_constans/cartConstant';
 
 export const addToCart = (productId, qty) => async (dispatch, getState) => {console.log(productId);
-  //console.log(123);
-  //const { data } = await Axios.get(`http://localhost:5500/api/products/${productId}`);
+
 
   let alreadyInCart =  localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []
   let checkAlready;
