@@ -24,8 +24,6 @@ body {
 
             &.hov, &.cl {
 
-                .priceDiv { bottom: 18% ; left: 4%; }
-
                 .bgAddedColor {
                     transform: skewY(231deg);
                     top: -38%;
@@ -51,9 +49,6 @@ body.bright-theme {
 
             .bgAddedColor {
                 background-color: #c5c5c5;
-
-                /*&.y { background-color: #c5c5c5; }
-                &.x { background-color: $addedColorBright; }*/
             }
 
             &.hov {

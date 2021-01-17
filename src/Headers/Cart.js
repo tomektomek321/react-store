@@ -26,7 +26,7 @@ export default function Cart(props) {
     }
 
     const removeItem = (id) => {
-        dispatch(removeFromCart(id));
+        dispatch(removeFromCart(id, true));
     }
 
 
@@ -34,7 +34,7 @@ export default function Cart(props) {
         let x = 0;
 
         cartItems.forEach(function(item, index) {
-            x = (x + item.price) * item.count;
+            x += ( item.price * item.count);
         })
 
         return x.toFixed(2);

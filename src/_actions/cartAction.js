@@ -68,13 +68,17 @@ export const addToCart = (productId, qty) => async (dispatch, getState) => {cons
 };
 
 
-export const removeFromCart = (productId) => async (dispatch, getState) => {
+export const removeFromCart = (productId, all) => async (dispatch, getState) => {
   console.log(productId);
 
   let alreadyInCart =  JSON.parse(localStorage.getItem('cartItems'));
   let prod = alreadyInCart.filter(item => item.id === productId)[0];
 
-  if(prod.count > 1) {
+  if(all || prod.count === 1) {
+    dispatch({ type: CART_REMOVE_ITEM, payload: { productId } });
+
+    localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
+  } else if(prod.count > 1) {
     dispatch({
       type: CART_ADD_ITEM,
       payload: {
@@ -89,9 +93,7 @@ export const removeFromCart = (productId) => async (dispatch, getState) => {
     localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
   } else {
 
-    dispatch({ type: CART_REMOVE_ITEM, payload: { productId } });
 
-    localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
   }
 
 };
