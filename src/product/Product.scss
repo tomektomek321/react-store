@@ -149,6 +149,12 @@ div { box-sizing: border-box; }
 
             }
 
+            &.cl {
+                .removeBtn {
+                    bottom: 1%;
+                }
+            }
+
         }
 
     }

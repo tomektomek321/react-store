@@ -1,6 +1,6 @@
 
 $addedColorBright: #cc9d9d;
-$addedColorNight: #565555;
+$addedColorNight: #745656;
 
 
 body {
@@ -52,8 +52,8 @@ body.bright-theme {
             .bgAddedColor {
                 background-color: #c5c5c5;
 
-                &.y { background-color: #c5c5c5; }
-                &.x { background-color: $addedColorBright; }
+                /*&.y { background-color: #c5c5c5; }
+                &.x { background-color: $addedColorBright; }*/
             }
 
             &.hov {

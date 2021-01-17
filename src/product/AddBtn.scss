@@ -1,6 +1,6 @@
 
 $addedColor: #cc9d9d;
-$addedColorDark: #565555;
+$addedColorDark: #745656;
 
 .divProduct{
 
@@ -18,33 +18,17 @@ $addedColorDark: #565555;
         text-align: center;
         display: flex;
 
-        &.added {
-            bottom: 0%;
-            left: 0%;
-            width: 50%;
-            border-top-right-radius: 20px;
-            overflow: hidden;
-        }
-
-
         &:hover {
         }
 
         .name {
             width: 70%;
             padding: 13px 0 15px 0;
-
-            &.added {
-            }
-
         }
 
         .image {
             width: 30%;
             padding: 9px 0 0 0;
-
-            &.added {
-            }
         }
 
     }
@@ -53,13 +37,26 @@ $addedColorDark: #565555;
         .btnCart {
             bottom: 6%;
 
-            &.added {
-                bottom: 0%;
-            }
         }
 
 
     }
+
+
+    &.cl {
+        .btnCart {
+            bottom: 0%;
+            left: 0%;
+            width: 50%;
+            border-top-right-radius: 20px;
+            overflow: hidden;
+
+        }
+
+
+    }
+
+
 
 }
 

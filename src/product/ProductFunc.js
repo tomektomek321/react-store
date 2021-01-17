@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Product.scss'
 import './Product_RWD.scss'
 import './Product_DetailsInfo.scss'
@@ -12,29 +12,26 @@ export default function ProductFunc(props) {
     const {cartItems} = useSelector((state) => state.cart);
     const x = cartItems.filter(a => a.id === props.product.id);
 
-    const [mainDivHov, setMinDivHover] = useState((x.length > 0) ? "cl" : "");
+    const [mainDivHov, setMinDivHover] = useState("");
+
+    useEffect(() => {
+
+    }, [])
+
+
+
 
 
     const dispatch = useDispatch();
     function productHover(bool) {
-        if(bool === null) {
-            if(!cartItems.find(a => a.id === props.product.id)) {
-                if(mainDivHov === "cl") {
-                    setMinDivHover("")
-                } else {
-                    setMinDivHover("hov")
-                }
+
+
+        if(cartItems.find(a => a.id === props.product.id) === undefined) {
+            if(bool) {
+                setMinDivHover("hov")
+            } else {
+                setMinDivHover("")
             }
-
-            return;
-        }
-
-        if(cartItems.find(a => a.id === props.product.id)) {
-            setMinDivHover("cl")
-        }else if(bool) {
-            setMinDivHover("hov")
-        } else {
-            setMinDivHover("")
         }
 
     }
@@ -44,6 +41,14 @@ export default function ProductFunc(props) {
 
 
     const imgClass = (true) ? "productImg" : "productImg hidden" ;
+
+    let mainDivCl_css;
+
+    if(x.length > 0) {
+        mainDivCl_css = "cl";
+    } else {
+        mainDivCl_css = "";
+    }
 
     function isAdded() {
         if(cartItems.find(a => a.id === props.product.id)) {
@@ -56,10 +61,12 @@ export default function ProductFunc(props) {
     function addToCart_() {
 
         dispatch(addToCart(props.product.id));
+        setMinDivHover("");
     }
 
     function removeItem(id) {
         dispatch(removeFromCart(id));
+        setMinDivHover("hov");
     }
 
     return (
@@ -67,16 +74,16 @@ export default function ProductFunc(props) {
 
         <div  className={`divProduct_front `}>
 
-            <div className={`divProduct ${mainDivHov} `}  onMouseEnter={() => productHover(true)} onMouseLeave={() => productHover(false)}>
+            <div className={`divProduct ${mainDivHov}  ${mainDivCl_css} `}  onMouseEnter={() => productHover(true)} onMouseLeave={() => productHover(false)}>
 
                 <div className="head">{title}</div>
-                <div className={`bgAddedColor ${isAdded(id) ? 'x' : 'y'}`}></div>
+                <div className={`bgAddedColor`}></div>
 
-                <div className={imgClass}  onClick={()=> productHover(null)}>
+                <div className={imgClass}>
                         <img src={img} alt="product" />
                 </div>
 
-                <div className={`btnCart ${isAdded(id) ? 'added' : ''}`}
+                <div className={`btnCart`}
                     disabled={inCart ? true : false}>
 
 
@@ -86,14 +93,14 @@ export default function ProductFunc(props) {
                         <div className="name" onClick={addToCart_} >Do koszyka</div>
                     )}
 
-                    <div className={`image ${isAdded(id) ? 'added' : ''}`}>
+                    <div className={`image`}>
                         <img alt="nic" src="img/cart-59-32.ico" />
                     </div>
 
                 </div>
 
 
-                <div className={`removeBtn ${isAdded(id) ? 'added' : ''}`} onClick={() => removeItem(id)}>
+                <div className={`removeBtn`} onClick={() => removeItem(id)}>
                     <img src="img/delete-32.ico" alt="product" />
                 </div>
 

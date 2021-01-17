@@ -18,7 +18,7 @@ export default function PhoneFilter() {
     let types = getUnique(products, "company");
 
     const dispatch = useDispatch();
-    console.log(filters);
+    //console.log(filters);
 
     const handleChange = (e) => {
         if(e.target.type === "select-one") {
@@ -37,7 +37,7 @@ export default function PhoneFilter() {
                 x.guaranty = 'egal';
             }
 
-            console.log(x);
+            //console.log(x);
             dispatch(changeFilter(x));
         } else if(e.target.type === "range") {
             let x = {...filters};

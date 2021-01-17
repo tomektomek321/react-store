@@ -11,7 +11,7 @@ export default function Cart(props) {
 
     const { cartItems } = cart;
 
-
+    console.log(cart);
 
     const increment = (id) => {
         dispatch(addToCart(id));

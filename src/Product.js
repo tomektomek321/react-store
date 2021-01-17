@@ -29,7 +29,7 @@ export default class Product extends Component {
         const {id, title, img, price, inCart} = this.props.product;
 
         let imgClass = (this.state.photoShowed) ? "productImg" : "productImg hidden" ;
-        let hovDiv = (this.state.mainDivHover) ? "divProduct hov" : "divProduct" ;
+        let hovDiv = (this.state.mainDivHover) ? "hov" : "" ;
 
         let detailsShowed = (this.state.detailsShowed) ? "detailsShowed" : "" ;
 
@@ -68,7 +68,7 @@ export default class Product extends Component {
 
                     <div  className={`divProduct_front ${detailsShowed}`} >
 
-                        <div className={hovDiv}  onMouseEnter={this.mainDivHov} onMouseLeave={this.mainDivHov}>
+                        <div className={`divProduct ${hovDiv}`}  onMouseEnter={this.mainDivHov} onMouseLeave={this.mainDivHov}>
 
                             <div className="head">{title}</div>
                             <div className={`bgAddedColor ${value.isAdded(id) ? 'x' : 'y'}`}></div>

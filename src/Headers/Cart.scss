@@ -1,5 +1,5 @@
 
-
+.nav__menu__cart {
 .cartDiv {
     padding: 0px;
     position: relative;
@@ -171,6 +171,7 @@
     }
 
 }
+}
 
 @media screen and (max-width: 450px) {
 
@@ -220,7 +221,7 @@
     }
 
 
-    body.dark-theme {
+    /*body.dark-theme {
         .cartDiv_ {
 
             .cart_item {
@@ -232,202 +233,216 @@
             }
 
         }
+    }*/
+
+}
+
+
+
+body.bright-theme {
+
+    .nav__menu__cart {
+
+        box-shadow: 0 0 5px 2px rgba(101, 101, 101, 0.43);
+
+        .cartDiv {
+            .cartDiv_onMenu {
+                .cartDiv_amount {
+                    background-color: red;
+                }
+            }
+
+
+
+            .cartDiv_downListDiv {
+
+
+                .cartDiv_ {
+
+
+                    .cart_totalDiv {
+
+                        .cart_total--empty {
+                            span {
+                                &:hover {
+                                    color: red;
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+                .cart_item {
+                    color: black;
+                    border-bottom: 1px solid #e6e0e0;
+
+                    > div {
+                    }
+
+                    .cart_item--image {
+                    }
+
+                    .cart_item--nameAmount {
+
+                        .cart_item--count {
+
+                            > div {
+                                background-color: #ececec;
+                            }
+
+                            .decrement {
+
+                                &:hover {
+                                    background-color: rgb(70, 70, 70);
+                                    color: white !important;
+                                }
+                            }
+
+
+                            .increment {
+
+                                &:hover {
+                                    background-color: rgb(70, 70, 70);
+                                    color: white !important;
+                                }
+                            }
+
+                        }
+
+
+
+
+
+                    }
+
+                    .cart_item--delete {
+                        background-color: #866565;
+                        &:hover {
+                            background-color: #888888;
+                        }
+                    }
+
+                }
+
+                .cart_total {
+
+
+                    .cart_total--btnBuy {
+                        background-color: rgb(54, 54, 185);
+                        color: white;
+                        box-shadow: 0 3px 5px 3px rgb(90, 88, 88);
+                    }
+
+                }
+
+            }
+        }
     }
 
 }
 
 
 
-body.bright-theme .cartDiv {
+body.dark-theme {
 
+    .nav__menu__cart {
 
-    .cartDiv_onMenu {
-        .cartDiv_amount {
-            background-color: red;
-        }
-    }
+        box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.3);
 
+        .cartDiv {
 
+            .cartDiv_onMenu {
 
-    .cartDiv_downListDiv {
-
-
-        .cartDiv_ {
-
-
-            .cart_totalDiv {
-
-                .cart_total--empty {
-                    span {
-                        &:hover {
-                            color: red;
-                        }
-
-                    }
+                .cartDiv_amount {
+                    background-color: red;
                 }
             }
-        }
 
-        .cart_item {
-            color: black;
-            border-bottom: 1px solid #e6e0e0;
 
-            > div {
-            }
 
-            .cart_item--image {
-            }
+            .cartDiv_downListDiv {
+                .cartDiv_ {
 
-            .cart_item--nameAmount {
+                    .cart_totalDiv {
 
-                .cart_item--count {
+                        .cart_total--empty {
+                            span {
+                                &:hover {
+                                    color: red;
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+                .cart_item {
+                    color: rgb(247, 247, 247);
+                    border-bottom: 1px solid #696666;
 
                     > div {
-                        background-color: #ececec;
                     }
 
-                    .decrement {
-
-                        &:hover {
-                            background-color: rgb(70, 70, 70);
-                            color: white !important;
-                        }
+                    .cart_item--image {
                     }
 
+                    .cart_item--nameAmount {
 
-                    .increment {
+                        .cart_item--count {
 
-                        &:hover {
-                            background-color: rgb(70, 70, 70);
-                            color: white !important;
-                        }
-                    }
+                            > div {
+                                background-color: #ececec;
+                                color: black;
+                            }
 
-                }
-
-
-
-
-
-            }
-
-            .cart_item--delete {
-                background-color: #866565;
-                &:hover {
-                    background-color: #888888;
-                }
-            }
-
-        }
-
-        .cart_total {
+                            .decrement {
+                                color: black;
+                                &:hover {
+                                    background-color: rgb(70, 70, 70);
+                                    color: white !important;
+                                }
+                            }
 
 
-            .cart_total--btnBuy {
-                background-color: rgb(54, 54, 185);
-                color: white;
-                box-shadow: 0 3px 5px 3px rgb(90, 88, 88);
-            }
+                            .increment {
+                                color: black;
+                                &:hover {
+                                    background-color: rgb(70, 70, 70);
+                                    color: white !important;
+                                }
+                            }
 
-        }
-
-    }
-
-}
-
-
-
-body.dark-theme .cartDiv {
-
-    .cartDiv_onMenu {
-
-        .cartDiv_amount {
-            background-color: red;
-        }
-    }
-
-
-
-    .cartDiv_downListDiv {
-        .cartDiv_ {
-
-            .cart_totalDiv {
-
-                .cart_total--empty {
-                    span {
-                        &:hover {
-                            color: red;
                         }
 
-                    }
-                }
-            }
-        }
 
-        .cart_item {
-            color: rgb(247, 247, 247);
-            border-bottom: 1px solid #696666;
 
-            > div {
-            }
 
-            .cart_item--image {
-            }
 
-            .cart_item--nameAmount {
-
-                .cart_item--count {
-
-                    > div {
-                        background-color: #ececec;
-                        color: black;
                     }
 
-                    .decrement {
-                        color: black;
+                    .cart_item--delete {
+                        //background-color: #534747;
                         &:hover {
-                            background-color: rgb(70, 70, 70);
-                            color: white !important;
-                        }
-                    }
-
-
-                    .increment {
-                        color: black;
-                        &:hover {
-                            background-color: rgb(70, 70, 70);
-                            color: white !important;
+                            background-color: #888888;
                         }
                     }
 
                 }
 
+                .cart_total {
 
 
+                    .cart_total--btnBuy {
+                        background-color: rgb(54, 54, 185);
+                        color: white;
+                        box-shadow: 0 3px 5px 3px rgb(90, 88, 88);
+                    }
 
-
-            }
-
-            .cart_item--delete {
-                //background-color: #534747;
-                &:hover {
-                    background-color: #888888;
                 }
+
             }
-
         }
-
-        .cart_total {
-
-
-            .cart_total--btnBuy {
-                background-color: rgb(54, 54, 185);
-                color: white;
-                box-shadow: 0 3px 5px 3px rgb(90, 88, 88);
-            }
-
-        }
-
     }
 
 }

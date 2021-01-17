@@ -11,10 +11,10 @@ export const Header1 = () => {
 
     const [cartHover, setCartHover] = useState(false);
 
-    console.log(cartItems);
+
 
     const cartHoverF = (cart) => {
-        console.log(cart);
+
         if(cart.length === 0) {
             setCartHover(false);
             return;
