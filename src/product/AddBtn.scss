@@ -19,6 +19,10 @@ $addedColorDark: #745656;
         display: flex;
 
         &:hover {
+            &.hov {
+                .name { background-color: #635ab6; }
+                .image { background-color: #7e7d7d; }
+            }
         }
 
         .name {
@@ -28,20 +32,15 @@ $addedColorDark: #745656;
 
         .image {
             width: 30%;
-            padding: 9px 0 0 0;
+            padding: 11px 3px 0 0;
         }
-
     }
 
     &.hov {
         .btnCart {
             bottom: 6%;
-
         }
-
-
     }
-
 
     &.cl {
         .btnCart {
@@ -50,14 +49,8 @@ $addedColorDark: #745656;
             width: 50%;
             border-top-right-radius: 20px;
             overflow: hidden;
-
         }
-
-
     }
-
-
-
 }
 
 
@@ -81,14 +74,10 @@ $addedColorDark: #745656;
                     height: 6.3vw;
                 }
             }
-
         }
-
     }
 
 }
-
-
 
 
 
@@ -100,7 +89,8 @@ body.bright-theme {
 
             border: 0px solid rgb(218, 218, 218);
             color: white;
-
+            border-radius: 10px;
+            overflow: hidden;
 
             /*&:hover {
                 .name {  background-color: #3a3946 !important; }
@@ -108,24 +98,17 @@ body.bright-theme {
             }*/
 
             .name {
-                background-color: #949494;
-
+                background-color: #6f68a9;
             }
 
             .image {
-                background-color: #3b336d;
-
+                background-color: #a2a2a2;
             }
-
         }
 
         &.hov {
             .btnCart {
-
-
             }
-
-
         }
 
         &.cl {
@@ -136,18 +119,10 @@ body.bright-theme {
                 }
                 .image {
                     background-color: $addedColor !important;
-
                 }
-
             }
-
-
-
         }
-
     }
-
-
 }
 
 
@@ -159,14 +134,8 @@ body.dark-theme {
             border: 0px solid rgb(0, 0, 0);
             color: white;
 
-            /*&:hover {
-                .name {  background-color: #3a3946 !important; }
-                .image { background-color: #191438 !important; }
-            }*/
-
             .name {
                 background-color: #3a3a3a;
-
             }
 
             .image {
@@ -186,8 +155,6 @@ body.dark-theme {
 
                 }
             }
-
-
         }
 
         &.cl {
@@ -200,14 +167,8 @@ body.dark-theme {
                     background-color: $addedColorDark !important;
 
                 }
-
             }
-
-
-
         }
-
     }
-
 
 }

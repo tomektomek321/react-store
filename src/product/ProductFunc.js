@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './Product.scss'
 import './Product_RWD.scss'
 import './Product_DetailsInfo.scss'
@@ -14,17 +14,8 @@ export default function ProductFunc(props) {
 
     const [mainDivHov, setMinDivHover] = useState("");
 
-    useEffect(() => {
-
-    }, [])
-
-
-
-
-
     const dispatch = useDispatch();
     function productHover(bool) {
-
 
         if(cartItems.find(a => a.id === props.product.id) === undefined) {
             if(bool) {
@@ -37,8 +28,6 @@ export default function ProductFunc(props) {
     }
 
     const {id, title, img, price, inCart} = props.product;
-
-
 
     const imgClass = (true) ? "productImg" : "productImg hidden" ;
 
@@ -112,7 +101,7 @@ export default function ProductFunc(props) {
 
                 </div>
 
-                <DetailsInfo />
+                <DetailsInfo id={id} />
 
             </div>
 

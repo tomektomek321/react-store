@@ -1,19 +1,7 @@
 
 import React from 'react';
-/*import {Route, Switch} from 'react-router-dom';
-import Modal from './modal';
-import Cart from './cart'
-import Navbar from './Navbar'
 
-import LeftNavbar from './LeftNavbar';
-
-import Footer from './Footer'
-import './App.scss';
-
-import ModalHook from './modalHook';
-import CartSite from './CartSite';
-import FullCart from './FullCart';*/
-//import CaruselDiscount from './CaruselDiscount'
+import { Modal } from './Modal';
 import PhoneFilter from './PhoneFilter';
 import ProductComponentHooks from './ProductComponentHooks'
 import { Header1 } from './Headers/Header1';
@@ -24,13 +12,13 @@ function App() {
 
   return (
     <div>
-
       <React.Fragment>
+        {/* <Loader /> */}
         <Header1 />
+        <Modal />
         <ImageSection />
         {/* <CaruselDiscount /> */}
         <PhoneFilter />
-        {/* <Navbar /> */}
         {/*
 
         <Switch>
@@ -41,8 +29,6 @@ function App() {
           <Route path="/fullCart" component={FullCart} />
         </Switch>
 
-        <Modal />
-        <LeftNavbar />
         <Footer /> */}
         <ProductComponentHooks />
         <script src="public/custom.js"></script>

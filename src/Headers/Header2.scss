@@ -257,7 +257,19 @@ img{
             justify-content: center;
             align-items: center;
             color: white;
+
+            &.addingUp {
+                transition: 1s;
+                animation: 1s goBack linear;
+            }
+
+            @keyframes goBack {
+                0% {transform: translateY(0px);}
+                50% {transform: translateY(-50px);}
+                100% {transform: translateY(0px);}
+            }
         }
+
 
         i {
             padding: 0 12px;

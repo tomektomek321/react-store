@@ -1,10 +1,15 @@
 import React from 'react'
 import ProductColors from './ProductColors';
 import './DetailsInfo.scss'
+import { selectModalProduct } from '../_actions/modalAction';
+import { useDispatch } from 'react-redux';
 
-export const DetailsInfo = () => {
+export const DetailsInfo = (props) => {
+    const dispatch = useDispatch();
 
-    function showDetails() {}
+    function showDetails() {
+        dispatch(selectModalProduct(props.id));
+    }
 
 
     return (

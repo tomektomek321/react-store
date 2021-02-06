@@ -11,8 +11,6 @@ export default function Cart(props) {
 
     const { cartItems } = cart;
 
-    console.log(cart);
-
     const increment = (id) => {
         dispatch(addToCart(id));
     }
@@ -43,13 +41,12 @@ export default function Cart(props) {
 
     const getFullPrice = () => {
         let x = getSubPrice();
-
         x = x * 1.05;
-
         return x.toFixed(2);
-
-
     }
+
+    const bgColor = document.getElementsByTagName("body")[0];
+    const trashColor = bgColor.classList.contains("bright-theme") ? "img/trash-5-32.ico" : "img/delete-32.ico";
 
     const detailsDataHTML = cartItems && cartItems.map((item, index) => {
 
@@ -81,11 +78,10 @@ export default function Cart(props) {
                 {item['price']} $
             </div>
                 <div className="cart_item--delete"  onClick={() => removeItem(item['id'])}>
-                    <div className="delete_btn"><img alt="nic" src="img/delete-32.ico" /></div>
+                    <div className="delete_btn"><img alt="nic" src={trashColor} /></div>
                 </div>
         </div>;
     });
-
 
     return (
 

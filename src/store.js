@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import { productDetailsReducer, productListReducer } from './_reducers/productsReducers';
 import { cartReducer} from './_reducers/cartReducers'
 import { filterReducer} from './_reducers/filterReducers'
+import { modalReducer} from './_reducers/modalReducers'
 import { storeProducts } from './TodoDB'
 
 
@@ -24,7 +25,8 @@ const initialState = {
         price: max,
         minPrice: min,
         maxPrice: max,
-    }
+    },
+    productDetails: null
 };
 
 const reduser = combineReducers({
@@ -32,6 +34,7 @@ const reduser = combineReducers({
     productDetails: productDetailsReducer,
     cart: cartReducer,
     filters: filterReducer,
+    modal: modalReducer,
 })
 
 const composeEnhencer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

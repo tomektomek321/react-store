@@ -9,7 +9,7 @@ export const ImageSection = () => {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
 
             <div>
-            <img className="imgi" src="img/brightPhoto2.jpg" alt="nic" />
+                <img className="imgi" src="img/brightPhoto2.jpg" alt="nic" />
             </div>
 
             <div className="container">
@@ -28,7 +28,7 @@ export const ImageSection = () => {
                     </div>
                     <div className="single-animation">
                     <h5>Check my phones</h5>
-                    <a href="index.html" className="btn cta-btn">Explore</a>
+                    <a href="/" id="exploreBtn" className="btn cta-btn">Explore</a>
                     </div>
                 </div>
 

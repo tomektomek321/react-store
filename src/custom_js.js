@@ -18,12 +18,11 @@ function loadFun() {
     showMenu('bx-grid-alt','nav-menu')
 
 
-    let x2 = document.querySelectorAll('.nav__logo')[0];
-
+    /*let x2 = document.querySelectorAll('.nav__logo')[0];
     x2.innerHTML += " ";
     x2.innerHTML += window.innerWidth;
     x2.innerHTML += "x";
-    x2.innerHTML += window.innerHeight
+    x2.innerHTML += window.innerHeight*/
 
 
     const navLink = document.querySelectorAll('.nav__link')
@@ -56,9 +55,17 @@ function loadFun() {
 
     })
 
+
+    const exploreBtn = document.getElementById('exploreBtn')
+
+    function goToPhones(e) {
+        e.preventDefault();
+        var elmnt = document.getElementsByClassName("cartProductDiv")[0];
+        window.scrollTo(0, elmnt.offsetTop - 180);
+    }
+
+    exploreBtn.addEventListener('click', goToPhones);
 }
-
-
 
 function fun3() {
 
@@ -70,8 +77,6 @@ function fun3() {
             x[i].classList.add("slideLeft");
         }
     }
-
 }
-
 
 
